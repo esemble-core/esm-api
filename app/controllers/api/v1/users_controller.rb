@@ -41,7 +41,7 @@ module Api
       private
 
       def user_params
-        params.permit(:name, :eth_addr)
+        params.permit(:name, :eth_addr, :uuid)
       end
     
     end
