@@ -9,12 +9,12 @@ RSpec.describe 'Users API', type: :request do
   # Test suite for GET /users
   describe 'GET /users' do
     # make HTTP get request before each example
-    before { get '/users' }
+    before { get '/api/v1/users' }
 
     it 'returns users' do
       # Note `json` is a custom helper to parse JSON responses
-      expect(JSON).not_to be_empty 
-      expect(JSON.size).to eq(10)
+      expect(json).not_to be_empty 
+      expect(json.size).to eq(10)
     end
 
     it 'returns status code 200' do
