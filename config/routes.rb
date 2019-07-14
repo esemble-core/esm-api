@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   namespace 'api' do
     namespace 'v1' do
       resources :users
+
+      get :usersearch, :controller => 'users', :action => 'usersearch', :as => 'usersearch'
     end
   end
 end

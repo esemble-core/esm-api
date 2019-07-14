@@ -1,15 +1,18 @@
 module Api
   module V1
     class UsersController < ApplicationController  
+
       def index
         users = User.order('created_at DESC')
         render json: {status: 'SUCCESS', message: 'Loaded users', data: users},status: :ok
       end
       
+
       def show
         user = User.find(params[:id])
         render json: {status: 'SUCCESS', message: 'Loaded user', data: user},status: :ok
       end
+
 
       def create
         user = User.new(user_params)
@@ -20,6 +23,7 @@ module Api
           render json: {status: 'ERROR', message: 'User not saved', data: user.errors},status: :unprocesseble_entity
         end
       end
+
 
       def destroy
         user = User.find(params[:id])
@@ -37,6 +41,19 @@ module Api
           render json: {status: 'ERROR', message: 'Article not updated', data: user.errors},status: :unprocesseble_entity
         end
       end
+
+
+      def usersearch
+        #user = User.find_by :eth_addr params[:eth_addr]
+        user = User.find_by eth_addr: params[:eth_addr]
+
+        if (user)
+          render json: {status: 'SUCCESS', message: 'Found user', data: user},status: :ok
+        else
+          render json: {status: 'ERROR', message: 'User not found', data: user.errors},status: :unprocesseble_entity
+        end
+      end
+
 
       private
 
