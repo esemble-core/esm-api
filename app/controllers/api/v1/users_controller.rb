@@ -45,13 +45,23 @@ module Api
 
       def usersearch
         #user = User.find_by :eth_addr params[:eth_addr]
-        user = User.find_by eth_addr: params[:eth_addr]
+       # begin
+          user = User.find_by eth_addr: params[:eth_addr]
 
         if (user)
           render json: {status: 'SUCCESS', message: 'Found user', data: user},status: :ok
         else
-          render json: {status: 'ERROR', message: 'User not found', data: user.errors},status: :unprocesseble_entity
+          render json: {status: 'FAIL', message: 'User Not Found', data: ''},status: :ok
         end
+       # rescue ActiveRecord::RecordNotFound => e
+          #logger.info(e)
+       #   render json: {status: 'SUCCESS', message:'User not found', data: e.to_s}, status: :not_found
+       # end
+        #if (user)
+       
+        #else
+        #  render json: {status: 'ERROR', message: 'User not found', data: user.errors},status: :unprocesseble_entity
+        #end
       end
 
 
