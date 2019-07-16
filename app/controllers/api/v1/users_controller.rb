@@ -1,6 +1,4 @@
-module Api
-  module V1
-    class UsersController < ApplicationController  
+    class Api::V1::UsersController < ApplicationController  
 
       def index
         users = User.order('created_at DESC')
@@ -44,24 +42,13 @@ module Api
 
 
       def usersearch
-        #user = User.find_by :eth_addr params[:eth_addr]
-       # begin
-          user = User.find_by eth_addr: params[:eth_addr]
+        user = User.find_by eth_addr: params[:eth_addr]
 
         if (user)
           render json: {status: 'SUCCESS', message: 'Found user', data: user},status: :ok
         else
           render json: {status: 'FAIL', message: 'User Not Found'}, status: :ok
         end
-       # rescue ActiveRecord::RecordNotFound => e
-          #logger.info(e)
-       #   render json: {status: 'SUCCESS', message:'User not found', data: e.to_s}, status: :not_found
-       # end
-        #if (user)
-       
-        #else
-        #  render json: {status: 'ERROR', message: 'User not found', data: user.errors},status: :unprocesseble_entity
-        #end
       end
 
 
@@ -72,8 +59,8 @@ module Api
       end
     
     end
-  end
-end
+#  end
+#end
 
 
 
