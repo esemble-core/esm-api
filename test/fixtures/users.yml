@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id: MyString
-  name: MyString
-  eth_addr: MyString
+  id: 1
+  name: freorare
+  eth_addr: 0xabcd
+  uuid: a-b-c-d
 
 two:
-  id: MyString
-  name: MyString
-  eth_addr: MyString
+  id: 2
+  name: secondareio
+  eth_addr: 0xefgh
+  uuid: e-f-g-h

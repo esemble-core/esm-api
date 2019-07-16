@@ -6,6 +6,8 @@ Rails.application.routes.draw do
       resources :users
 
       get :usersearch, :controller => 'users', :action => 'usersearch', :as => 'usersearch'
+
+      get :status, :controller => 'status', :action => 'index'
     end
   end
 end
