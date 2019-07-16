@@ -28,7 +28,7 @@ module Api
       def destroy
         user = User.find(params[:id])
         user.destroy
-        render json: {status: 'SUCCESS', message: 'Deleted user', data: user},status: :no_content
+        render json: {status: 'SUCCESS', message: 'Deleted user'},status: :no_content
       end
 
 
@@ -51,7 +51,7 @@ module Api
         if (user)
           render json: {status: 'SUCCESS', message: 'Found user', data: user},status: :ok
         else
-          render json: {status: 'FAIL', message: 'User Not Found', data: ''},status: :ok
+          render json: {status: 'FAIL', message: 'User Not Found'}, status: :ok
         end
        # rescue ActiveRecord::RecordNotFound => e
           #logger.info(e)
