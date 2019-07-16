@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     namespace 'v1' do
       resources :users
 
+      resources :projects
+
       get :usersearch, :controller => 'users', :action => 'usersearch', :as => 'usersearch'
 
       get :status, :controller => 'status', :action => 'index'

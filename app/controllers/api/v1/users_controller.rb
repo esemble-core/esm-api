@@ -34,9 +34,9 @@
         user = User.find(params[:id])
 
         if (user.update_attributes(user_params))
-          render json: {status: 'SUCCESS', message: 'Updated article', data: user},status: :ok
+          render json: {status: 'SUCCESS', message: 'User article', data: user},status: :ok
         else
-          render json: {status: 'ERROR', message: 'Article not updated', data: user.errors},status: :unprocesseble_entity
+          render json: {status: 'ERROR', message: 'User not updated', data: user.errors},status: :unprocesseble_entity
         end
       end
 
