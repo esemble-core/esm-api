@@ -66,7 +66,6 @@ RSpec.describe 'Projects API', type: :request do
       p1.tasks.create(name: "my task 2")
       p1.save
       get('/api/v1/projects/1', params: {with_tasks: 'true'})
-      puts resp_json
     end
 
   end

@@ -17,10 +17,8 @@ class Api::V1::ProjectsController < ApplicationController
 
   def show
     if (params[:with_tasks])
-      #project = Project.find(params[:id])
-      puts "--- with tasks"
-      #project = Project.includes(:tasks).where(id: params[:id])
-      render json: Project.includes(:tasks).where(id: params[:id]), include: ['tasks']
+      project = Project.includes(:tasks).where(id: params[:id])
+      render json: {status: 'SUCCESS', message: 'Loaded project', data: project, include: ['tasks']},status: :ok
     else
       project = Project.find(params[:id])
       render json: {status: 'SUCCESS', message: 'Loaded project', data: project},status: :ok
