@@ -16,8 +16,15 @@ class Api::V1::ProjectsController < ApplicationController
   end
 
   def show
-    project = Project.find(params[:id])
-    render json: {status: 'SUCCESS', message: 'Loaded project', data: project},status: :ok
+    if (params[:with_tasks])
+      #project = Project.find(params[:id])
+      puts "--- with tasks"
+      #project = Project.includes(:tasks).where(id: params[:id])
+      render json: Project.includes(:tasks).where(id: params[:id]), include: ['tasks']
+    else
+      project = Project.find(params[:id])
+      render json: {status: 'SUCCESS', message: 'Loaded project', data: project},status: :ok
+    end
   end
 
   def destroy

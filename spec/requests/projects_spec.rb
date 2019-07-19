@@ -25,7 +25,7 @@ RSpec.describe 'Projects API', type: :request do
     end
 
     it 'shows a project' do
-      p1 = Project.find(1)
+      p1 = Project.find('1')
       get '/api/v1/projects/1'
       expect(resp_json['data']['name']).to be_eql(p1.name)
     end
@@ -58,6 +58,15 @@ RSpec.describe 'Projects API', type: :request do
       delete('/api/v1/projects/' + id.to_s)
       expect{Task.find(t1_id)}.to raise_error( ActiveRecord::RecordNotFound)
       expect{Task.find(t2_id)}.to raise_error( ActiveRecord::RecordNotFound)
+    end
+
+    it 'returns tasks for projects when asked' do
+      p1 = Project.find(1)
+      p1.tasks.create(name: "my task 1")
+      p1.tasks.create(name: "my task 2")
+      p1.save
+      get('/api/v1/projects/1', params: {with_tasks: 'true'})
+      puts resp_json
     end
 
   end

@@ -12,15 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2019_07_28_140430) do
 
-  create_table "items", force: :cascade do |t|
-    t.string "name"
-    t.boolean "done"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_items_on_user_id"
-  end
-
   create_table "projects", force: :cascade do |t|
     t.integer "lifecycle"
     t.string "name"
@@ -32,7 +23,7 @@ ActiveRecord::Schema.define(version: 2019_07_28_140430) do
 
   create_table "tasks", force: :cascade do |t|
     t.string "name"
-    t.boolean "done"
+    t.boolean "done", default: false
     t.integer "project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
