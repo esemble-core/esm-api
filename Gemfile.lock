@@ -60,6 +60,8 @@ GEM
       railties (>= 4.2.0)
     faker (1.9.6)
       i18n (>= 0.7)
+    fast_jsonapi (1.5)
+      activesupport (>= 4.2)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     i18n (1.6.0)
@@ -81,6 +83,7 @@ GEM
     nio4r (2.3.1)
     nokogiri (1.10.3-x64-mingw32)
       mini_portile2 (~> 2.4.0)
+    oj (3.8.0)
     puma (3.12.1)
     rack (2.0.7)
     rack-cors (1.0.2)
@@ -162,6 +165,8 @@ DEPENDENCIES
   database_cleaner
   factory_bot_rails
   faker
+  fast_jsonapi
+  oj
   puma (~> 3.11)
   rack-cors (= 1.0.2)
   rails (~> 5.2.3)

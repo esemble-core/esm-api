@@ -17,8 +17,13 @@ class Api::V1::ProjectsController < ApplicationController
 
   def show
     if (params[:with_tasks])
-      project = Project.includes(:tasks).where(id: params[:id])
-      render json: {status: 'SUCCESS', message: 'Loaded project', data: project, include: ['tasks']},status: :ok
+      project = Project.find(params[:id])
+      tasks = project.tasks
+      #proj_json = ProjectSerializer.new(project).serialized_json
+      #tasks_json = TaskSerializer.new(tasks).serialized_json
+      #render json: {status: 'SUCCESS', message: 'Loaded projects with tasks', data: proj_json, include: tasks_json},status: :ok
+
+      render json: {status: 'SUCCESS', message: 'Loaded projects with tasks', data: project, include: tasks},status: :ok
     else
       project = Project.find(params[:id])
       render json: {status: 'SUCCESS', message: 'Loaded project', data: project},status: :ok
