@@ -26,7 +26,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update user" do
-    patch url_for([:api, :v1, @user]), params: { user: { eth_addr: @user.eth_addr, id: @user.id, name: @user.name } }, as: :json
+    patch url_for([:api, :v1, @user]), params: { user: { eth_addr: @user.eth_addr, id: @user.id, name: @user.name, email: @user.email } }, as: :json
     assert_response 200
   end
 

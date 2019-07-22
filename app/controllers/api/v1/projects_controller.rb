@@ -9,7 +9,7 @@ class Api::V1::ProjectsController < ApplicationController
     project = Project.new(proj_params)
 
     if project.save
-      render json: {status: 'SUCCESS', message: 'Saved user', data: project},status: :ok
+      render json: {status: 'SUCCESS', message: 'Saved project', data: project},status: :ok
     else
       render json: {status: 'ERROR', message: 'Project not saved', data: project.errors},status: :unprocesseble_entity
     end
@@ -36,6 +36,7 @@ class Api::V1::ProjectsController < ApplicationController
     render json: {status: 'SUCCESS', message: 'Deleted project'},status: :no_content
   end
 
+
   def update
     project = Project.find(params[:id])
 
@@ -47,9 +48,23 @@ class Api::V1::ProjectsController < ApplicationController
   end
 
 
+  def create_task
+    project = Project.find(params[:project_id])
+    task = project.tasks.create(task_params)
+    if project.save
+      render json: {status: 'SUCCESS', message: 'Saved task', data: task},status: :ok
+    else
+      render json: {status: 'ERROR', message: 'Task not saved', data: task.errors},status: :unprocesseble_entity
+    end
+  end
+
 
   private
   def proj_params
     params.permit(:name, :description, :lifecycle, :funding)
+  end
+
+  def task_params
+    params.permit(:name, :project_id)
   end
 end

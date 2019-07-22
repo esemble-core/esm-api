@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
       get :usersearch, :controller => 'users', :action => 'usersearch', :as => 'usersearch'
 
+      post :tasks, :controller => 'projects', :action => 'create_task', :as => 'create_task'
+
       get :status, :controller => 'status', :action => 'index'
     end
   end

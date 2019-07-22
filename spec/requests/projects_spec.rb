@@ -67,5 +67,20 @@ RSpec.describe 'Projects API', type: :request do
       get('/api/v1/projects/1', params: {with_tasks: 'true'})
       expect(resp_json['include'].size).to be_eql(2)
     end
+
+    it 'creates tasks for a project id' do
+      pre = Project.find(1).tasks.count
+      puts pre
+      post('/api/v1/tasks/', params: {project_id: '1', name: 'my awesome task'})
+      post = Project.find(1).tasks.count
+      puts post
+      expect(post).to be_eql(pre + 1)
+    end
+
+
+    it 'does not create tasks with an invalid project id' do
+
+    end
+ 
   end
 end

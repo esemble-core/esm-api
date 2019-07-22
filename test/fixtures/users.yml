@@ -5,9 +5,12 @@ one:
   name: freorare
   eth_addr: 0xabcd
   uuid: a-b-c-d
+  email: you@gotmail.com
 
 two:
   id: 2
   name: secondareio
   eth_addr: 0xefgh
   uuid: e-f-g-h
+  email: me@gotmail.com
+
