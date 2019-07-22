@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'UserSearch', type: :request do
   before {
-    post('/api/v1/users', params: {name: 'MiMi', eth_addr:'0x1234', uuid:'1-2-3-4'})
-    post('/api/v1/users', params: {name: 'CiCi', eth_addr:'0x5678', uuid:'5-6-7-8'})
+    post('/api/v1/users', params: {name: 'MiMi', eth_addr:'0x1234', uuid:'1-2-3-4', email:'mimi@email.com'})
+    post('/api/v1/users', params: {name: 'CiCi', eth_addr:'0x5678', uuid:'5-6-7-8', email:'mimi@email.com'})
   }
 
   it 'returns the right user' do

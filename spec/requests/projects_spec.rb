@@ -5,7 +5,6 @@ RSpec.describe 'Projects API', type: :request do
   let!(:projects) { create_list(:project, 10) }
 
   describe '/projects API' do
-
     it 'returns projects' do
       get '/api/v1/projects'
       expect(resp_json).not_to be_empty 
@@ -68,6 +67,5 @@ RSpec.describe 'Projects API', type: :request do
       get('/api/v1/projects/1', params: {with_tasks: 'true'})
       expect(resp_json['include'].size).to be_eql(2)
     end
-
   end
 end

@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   
-  validates_presence_of :name, :eth_addr, :uuid
+  validates_presence_of :name, :eth_addr, :uuid, :email
 
  # before_save :default_values
   #def generate_uuid

@@ -55,7 +55,7 @@
       private
 
       def user_params
-        params.permit(:name, :eth_addr, :uuid)
+        params.permit(:name, :eth_addr, :uuid, :email)
       end
     
     end

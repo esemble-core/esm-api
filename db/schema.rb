@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2019_07_28_140430) do
     t.string "uuid"
     t.string "name"
     t.string "eth_addr"
+    t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

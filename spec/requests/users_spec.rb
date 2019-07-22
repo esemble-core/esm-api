@@ -28,7 +28,7 @@ RSpec.describe 'Users API', type: :request do
 
     it 'create a user' do
       pre = User.count
-      post('/api/v1/users', params: {name: 'GiGi', eth_addr:'0x7890', uuid:'7-8-9-0'})
+      post('/api/v1/users', params: {name: 'GiGi', eth_addr:'0x7890', uuid:'7-8-9-0', email:'gigi@email.com'})
       post = User.count
       expect(post).to be_eql(pre + 1)
     end
