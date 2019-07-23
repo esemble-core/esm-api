@@ -14,26 +14,26 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-07-22T18:40:58-04:00">2019-07-22T18:40:58-04:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-07-23T12:52:51-04:00">2019-07-23T12:52:51-04:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">97.63%</span></span>
+    (<span class="covered_percent"><span class="green">97.69%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         3.48
+         3.42
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>32</b> files in total.
-    <b>295</b> relevant lines. 
-    <span class="green"><b>288</b> lines covered</span> and
+    <b>303</b> relevant lines. 
+    <span class="green"><b>296</b> lines covered</span> and
     <span class="red"><b>7</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -52,10 +52,10 @@
       
       <tr>
         <td class="strong"><a href="#6ef6906b53c6d564e7a551a99d2d5f80f4137a08" class="src_link" title="app/controllers/api/v1/projects_controller.rb">app/controllers/api/v1/projects_controller.rb</a></td>
-        <td class="green strong">91.67 %</td>
-        <td>70</td>
-        <td>36</td>
-        <td>33</td>
+        <td class="green strong">91.89 %</td>
+        <td>73</td>
+        <td>37</td>
+        <td>34</td>
         <td>3</td>
         <td>1.2</td>
       </tr>
@@ -323,9 +323,9 @@
       <tr>
         <td class="strong"><a href="#79c789c46ea658c368b4ad841adff5e92b04863a" class="src_link" title="spec/requests/projects_spec.rb">spec/requests/projects_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>86</td>
-        <td>56</td>
-        <td>56</td>
+        <td>92</td>
+        <td>63</td>
+        <td>63</td>
         <td>0</td>
         <td>1.2</td>
       </tr>
@@ -367,7 +367,7 @@
         <td>3</td>
         <td>3</td>
         <td>0</td>
-        <td>6.3</td>
+        <td>6.7</td>
       </tr>
       
     </tbody>
@@ -389,10 +389,10 @@
         <div class="source_table" id="6ef6906b53c6d564e7a551a99d2d5f80f4137a08">
   <div class="header">
     <h3>app/controllers/api/v1/projects_controller.rb</h3>
-    <h4><span class="green">91.67 %</span> covered</h4>
+    <h4><span class="green">91.89 %</span> covered</h4>
     <div>
-      <b>36</b> relevant lines. 
-      <span class="green"><b>33</b> lines covered</span> and
+      <b>37</b> relevant lines. 
+      <span class="green"><b>34</b> lines covered</span> and
       <span class="red"><b>3</b> lines missed.</span>
     </div>
   </div>
@@ -706,8 +706,8 @@
           <code class="ruby">  def create_task</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="52">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="52">
+          <span class="hits">2</span>
           
           <code class="ruby">    project = Project.find(params[:project_id])</code>
         </li>
@@ -751,70 +751,88 @@
         <li class="never" data-hits="" data-linenumber="59">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="60">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  rescue ActiveRecord::RecordNotFound</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="61">
+        <li class="covered" data-hits="1" data-linenumber="61">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    render json: {status: &#39;ERROR&#39;, message: &#39;Task could not be saved, parent project not found&#39;},status: :unprocesseble_entity</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="62">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="63">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="62">
+        <li class="never" data-hits="" data-linenumber="64">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="65">
           <span class="hits">1</span>
           
           <code class="ruby">  private</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="63">
+        <li class="covered" data-hits="1" data-linenumber="66">
           <span class="hits">1</span>
           
           <code class="ruby">  def proj_params</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="64">
+        <li class="covered" data-hits="2" data-linenumber="67">
           <span class="hits">2</span>
           
           <code class="ruby">    params.permit(:name, :description, :lifecycle, :funding)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="65">
+        <li class="never" data-hits="" data-linenumber="68">
           
           
           <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="66">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="67">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def task_params</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="68">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    params.permit(:name, :project_id)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="69">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="70">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def task_params</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="71">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    params.permit(:name, :project_id)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="72">
+          
+          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="70">
+        <li class="never" data-hits="" data-linenumber="73">
           
           
           <code class="ruby">end</code>
@@ -3898,8 +3916,8 @@
     <h3>spec/requests/projects_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>56</b> relevant lines. 
-      <span class="green"><b>56</b> lines covered</span> and
+      <b>63</b> relevant lines. 
+      <span class="green"><b>63</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -4393,31 +4411,67 @@
           <code class="ruby">    it &#39;does not create tasks with an invalid project id&#39; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="82">
+        <li class="covered" data-hits="1" data-linenumber="82">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">      bad_id = &#39;100&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="83">
+        <li class="covered" data-hits="2" data-linenumber="83">
+          <span class="hits">2</span>
+          
+          <code class="ruby">      expect{Project.find(bad_id)}.to raise_error( ActiveRecord::RecordNotFound)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="84">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      pre = Task.all.count</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="85">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      post(&#39;/api/v1/tasks/&#39;, params: {project_id: bad_id, name: &#39;should not be created&#39;})</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="86">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(resp_json[&#39;status&#39;]).to be_eql(&#39;ERROR&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="87">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      post = Task.all.count</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="88">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(pre).to be_eql(post)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="89">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="84">
+        <li class="never" data-hits="" data-linenumber="90">
           
           
           <code class="ruby"> </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="85">
+        <li class="never" data-hits="" data-linenumber="91">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="86">
+        <li class="never" data-hits="" data-linenumber="92">
           
           
           <code class="ruby">end</code>
@@ -5069,8 +5123,8 @@
           <code class="ruby">  def resp_json</code>
         </li>
       
-        <li class="covered" data-hits="17" data-linenumber="4">
-          <span class="hits">17</span>
+        <li class="covered" data-hits="18" data-linenumber="4">
+          <span class="hits">18</span>
           
           <code class="ruby">    JSON.parse(response.body)</code>
         </li>

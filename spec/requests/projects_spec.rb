@@ -79,7 +79,13 @@ RSpec.describe 'Projects API', type: :request do
 
 
     it 'does not create tasks with an invalid project id' do
-
+      bad_id = '100'
+      expect{Project.find(bad_id)}.to raise_error( ActiveRecord::RecordNotFound)
+      pre = Task.all.count
+      post('/api/v1/tasks/', params: {project_id: bad_id, name: 'should not be created'})
+      expect(resp_json['status']).to be_eql('ERROR')
+      post = Task.all.count
+      expect(pre).to be_eql(post)
     end
  
   end

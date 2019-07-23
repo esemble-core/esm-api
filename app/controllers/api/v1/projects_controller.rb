@@ -56,6 +56,9 @@ class Api::V1::ProjectsController < ApplicationController
     else
       render json: {status: 'ERROR', message: 'Task not saved', data: task.errors},status: :unprocesseble_entity
     end
+
+  rescue ActiveRecord::RecordNotFound
+    render json: {status: 'ERROR', message: 'Task could not be saved, parent project not found'},status: :unprocesseble_entity
   end
 
 
