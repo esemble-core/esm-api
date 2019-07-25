@@ -3,6 +3,8 @@ require 'rails_helper'
 
 RSpec.describe 'Projects API', type: :request do
   let!(:projects) { create_list(:project, 10) }
+  let!(:users) { create_list(:user, 1) }
+  let!(:tasks) { create_list(:task, 5) }
 
   describe '/projects API' do
     it 'returns projects' do
@@ -60,20 +62,18 @@ RSpec.describe 'Projects API', type: :request do
     end
 
     it 'returns tasks for projects when asked' do
-      p1 = Project.find(1)
+      p1 = Project.find(2)
       p1.tasks.create(name: "my task 1")
       p1.tasks.create(name: "my task 2")
       p1.save
-      get('/api/v1/projects/1', params: {with_tasks: 'true'})
+      get('/api/v1/projects/2', params: {with_tasks: 'true'})
       expect(resp_json['include'].size).to be_eql(2)
     end
 
     it 'creates tasks for a project id' do
       pre = Project.find(1).tasks.count
-      puts pre
       post('/api/v1/tasks/', params: {project_id: '1', name: 'my awesome task'})
       post = Project.find(1).tasks.count
-      puts post
       expect(post).to be_eql(pre + 1)
     end
 
@@ -87,6 +87,15 @@ RSpec.describe 'Projects API', type: :request do
       post = Task.all.count
       expect(pre).to be_eql(post)
     end
- 
+
+    it 'has a many to many between users and tasks' do 
+      user = User.find(1)
+      pre = user.tasks.count
+      t1 = Task.find(1)
+      pre_task = t1.users.count
+      user.tasks << t1
+      expect(user.tasks.count).to be_eql(pre + 1)
+      expect(t1.users.count).to be_eql(pre_task + 1)
+    end
   end
 end
