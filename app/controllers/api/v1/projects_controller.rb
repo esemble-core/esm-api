@@ -1,4 +1,4 @@
-class Api::V1::ProjectsController < ApplicationController  
+ class Api::V1::ProjectsController < ApplicationController  
 
   def index
     projects = Project.order('created_at DESC')
@@ -59,6 +59,17 @@ class Api::V1::ProjectsController < ApplicationController
 
   rescue ActiveRecord::RecordNotFound
     render json: {status: 'ERROR', message: 'Task could not be saved, parent project not found'},status: :unprocesseble_entity
+  end
+
+
+  def user_working_on_task
+    t = Task.find(params[:task_id])
+    u = User.find(params[:user_id])
+    t.users << u
+    t.save
+    render json: {status: 'SUCCESS', message: 'Saved user working on task'},status: :ok
+  rescue ActiveRecord::RecordNotFound
+    render json: {status: 'ERROR', message: 'Task or User could be not found'},status: :unprocesseble_entity
   end
 
 

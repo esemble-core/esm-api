@@ -89,13 +89,16 @@ RSpec.describe 'Projects API', type: :request do
     end
 
     it 'has a many to many between users and tasks' do 
-      user = User.find(1)
-      pre = user.tasks.count
-      t1 = Task.find(1)
-      pre_task = t1.users.count
-      user.tasks << t1
-      expect(user.tasks.count).to be_eql(pre + 1)
-      expect(t1.users.count).to be_eql(pre_task + 1)
+      user_id = 1
+      task_id = 1
+
+      u = User.find(user_id)
+      pre_count = u.tasks.count
+    
+      post('/api/v1/user_working_on_task', params: { user_id: user_id, task_id: task_id })
+      
+      post_count = u.tasks.count
+      expect(post_count).to be_eql(pre_count + 1)
     end
   end
 end

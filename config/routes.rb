@@ -7,11 +7,13 @@ Rails.application.routes.draw do
 
       resources :projects
 
-      get :usersearch, :controller => 'users', :action => 'usersearch', :as => 'usersearch'
+      get :usersearch, :controller => 'users'#, :action => 'usersearch'
 
-      post :tasks, :controller => 'projects', :action => 'create_task', :as => 'create_task'
+      post :tasks, :controller => 'projects', :action => 'create_task'
 
       get :status, :controller => 'status', :action => 'index'
+    
+      post :user_working_on_task, :controller => 'projects'#, :action => 'user_working_on_task'
     end
   end
 end
