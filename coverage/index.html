@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-07-25T13:49:38-04:00">2019-07-25T13:49:38-04:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-07-26T14:04:04-04:00">2019-07-26T14:04:04-04:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         4.35
+         4.33
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>32</b> files in total.
-    <b>333</b> relevant lines. 
-    <span class="green"><b>325</b> lines covered</span> and
+    <b>33</b> files in total.
+    <b>334</b> relevant lines. 
+    <span class="green"><b>326</b> lines covered</span> and
     <span class="red"><b>8</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -52,12 +52,12 @@
       
       <tr>
         <td class="strong"><a href="#6ef6906b53c6d564e7a551a99d2d5f80f4137a08" class="src_link" title="app/controllers/api/v1/projects_controller.rb">app/controllers/api/v1/projects_controller.rb</a></td>
-        <td class="green strong">90.91 %</td>
-        <td>84</td>
-        <td>44</td>
-        <td>40</td>
-        <td>4</td>
-        <td>1.2</td>
+        <td class="green strong">92.86 %</td>
+        <td>58</td>
+        <td>28</td>
+        <td>26</td>
+        <td>2</td>
+        <td>1.3</td>
       </tr>
       
       <tr>
@@ -68,6 +68,16 @@
         <td>3</td>
         <td>0</td>
         <td>1.3</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#be7350c14288e6ff9e1bff24978ad78e39fc93a6" class="src_link" title="app/controllers/api/v1/tasks_controller.rb">app/controllers/api/v1/tasks_controller.rb</a></td>
+        <td class="yellow strong">88.24 %</td>
+        <td>31</td>
+        <td>17</td>
+        <td>15</td>
+        <td>2</td>
+        <td>0.9</td>
       </tr>
       
       <tr>
@@ -243,7 +253,7 @@
       <tr>
         <td class="strong"><a href="#ad957ae1c0f052b76930a3952aef0ca3467e744c" class="src_link" title="config/routes.rb">config/routes.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>19</td>
+        <td>21</td>
         <td>9</td>
         <td>9</td>
         <td>0</td>
@@ -323,7 +333,7 @@
       <tr>
         <td class="strong"><a href="#79c789c46ea658c368b4ad841adff5e92b04863a" class="src_link" title="spec/requests/projects_spec.rb">spec/requests/projects_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>111</td>
+        <td>104</td>
         <td>71</td>
         <td>71</td>
         <td>0</td>
@@ -389,11 +399,11 @@
         <div class="source_table" id="6ef6906b53c6d564e7a551a99d2d5f80f4137a08">
   <div class="header">
     <h3>app/controllers/api/v1/projects_controller.rb</h3>
-    <h4><span class="green">90.91 %</span> covered</h4>
+    <h4><span class="green">92.86 %</span> covered</h4>
     <div>
-      <b>44</b> relevant lines. 
-      <span class="green"><b>40</b> lines covered</span> and
-      <span class="red"><b>4</b> lines missed.</span>
+      <b>28</b> relevant lines. 
+      <span class="green"><b>26</b> lines covered</span> and
+      <span class="red"><b>2</b> lines missed.</span>
     </div>
   </div>
   
@@ -700,205 +710,49 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="51">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def create_task</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="52">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    project = Project.find(params[:project_id])</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="53">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    task = project.tasks.create(task_params)</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="54">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    if project.save</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="55">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      render json: {status: &#39;SUCCESS&#39;, message: &#39;Saved task&#39;, data: task},status: :ok</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="56">
-          
-          
-          <code class="ruby">    else</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="57">
-          
-          
-          <code class="ruby">      render json: {status: &#39;ERROR&#39;, message: &#39;Task not saved&#39;, data: task.errors},status: :unprocesseble_entity</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="58">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="59">
+        <li class="never" data-hits="" data-linenumber="51">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="60">
-          
-          
-          <code class="ruby">  rescue ActiveRecord::RecordNotFound</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="61">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    render json: {status: &#39;ERROR&#39;, message: &#39;Task could not be saved, parent project not found&#39;},status: :unprocesseble_entity</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="62">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="63">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="64">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="65">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def user_working_on_task</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="66">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    t = Task.find(params[:task_id])</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="67">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    u = User.find(params[:user_id])</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="68">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    t.users &lt;&lt; u</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="69">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    t.save</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="70">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    render json: {status: &#39;SUCCESS&#39;, message: &#39;Saved user working on task&#39;},status: :ok</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="71">
-          
-          
-          <code class="ruby">  rescue ActiveRecord::RecordNotFound</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="72">
-          
-          
-          <code class="ruby">    render json: {status: &#39;ERROR&#39;, message: &#39;Task or User could be not found&#39;},status: :unprocesseble_entity</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="73">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="74">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="75">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="76">
+        <li class="covered" data-hits="1" data-linenumber="52">
           <span class="hits">1</span>
           
           <code class="ruby">  private</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="77">
+        <li class="covered" data-hits="1" data-linenumber="53">
           <span class="hits">1</span>
           
           <code class="ruby">  def proj_params</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="78">
+        <li class="covered" data-hits="2" data-linenumber="54">
           <span class="hits">2</span>
           
           <code class="ruby">    params.permit(:name, :description, :lifecycle, :funding)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="79">
+        <li class="never" data-hits="" data-linenumber="55">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="80">
+        <li class="never" data-hits="" data-linenumber="56">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="81">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="57">
           
-          <code class="ruby">  def task_params</code>
+          
+          <code class="ruby">  </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="82">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    params.permit(:name, :project_id)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="83">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="84">
+        <li class="never" data-hits="" data-linenumber="58">
           
           
           <code class="ruby">end</code>
@@ -957,6 +811,211 @@
           
           
           <code class="ruby">  </code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="be7350c14288e6ff9e1bff24978ad78e39fc93a6">
+  <div class="header">
+    <h3>app/controllers/api/v1/tasks_controller.rb</h3>
+    <h4><span class="yellow">88.24 %</span> covered</h4>
+    <div>
+      <b>17</b> relevant lines. 
+      <span class="green"><b>15</b> lines covered</span> and
+      <span class="red"><b>2</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class Api::V1::TasksController &lt; ApplicationController </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby">  </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def create</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="4">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    project = Project.find(params[:project_id])</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    task = project.tasks.create(task_params)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    if project.save</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      render json: {status: &#39;SUCCESS&#39;, message: &#39;Saved task&#39;, data: task},status: :ok</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby">    else</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="9">
+          
+          
+          <code class="ruby">      render json: {status: &#39;ERROR&#39;, message: &#39;Task not saved&#39;, data: task.errors},status: :unprocesseble_entity</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">  rescue ActiveRecord::RecordNotFound</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    render json: {status: &#39;ERROR&#39;, message: &#39;Task could not be saved, parent project not found&#39;},status: :unprocesseble_entity</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="15">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def user_working_on_task</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    t = Task.find(params[:task_id])</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="19">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    u = User.find(params[:user_id])</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="20">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    t.users &lt;&lt; u</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="21">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    t.save</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="22">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    render json: {status: &#39;SUCCESS&#39;, message: &#39;Saved user working on task&#39;},status: :ok</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby">  rescue ActiveRecord::RecordNotFound</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="24">
+          
+          
+          <code class="ruby">    render json: {status: &#39;ERROR&#39;, message: &#39;Task or User could be not found&#39;},status: :unprocesseble_entity</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def task_params</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="28">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    params.permit(:name, :project_id)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="29">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby">end</code>
         </li>
       
     </ol>
@@ -2918,7 +2977,7 @@
         <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
-          <code class="ruby">      get :usersearch, :controller =&gt; &#39;users&#39;#, :action =&gt; &#39;usersearch&#39;</code>
+          <code class="ruby">      resources :tasks</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
@@ -2930,7 +2989,7 @@
         <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
-          <code class="ruby">      post :tasks, :controller =&gt; &#39;projects&#39;, :action =&gt; &#39;create_task&#39;</code>
+          <code class="ruby">      get :usersearch, :controller =&gt; &#39;users&#39;#, :action =&gt; &#39;usersearch&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
@@ -2939,37 +2998,49 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="14">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="14">
           
-          <code class="ruby">      get :status, :controller =&gt; &#39;status&#39;, :action =&gt; &#39;index&#39;</code>
+          
+          <code class="ruby">      #post :tasks, :controller =&gt; &#39;projects&#39;, :action =&gt; &#39;create_task&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="15">
           
           
-          <code class="ruby">    </code>
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
-          <code class="ruby">      post :user_working_on_task, :controller =&gt; &#39;projects&#39;#, :action =&gt; &#39;user_working_on_task&#39;</code>
+          <code class="ruby">      get :status, :controller =&gt; &#39;status&#39;, :action =&gt; &#39;index&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="17">
           
           
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      post :user_working_on_task, :controller =&gt; &#39;tasks&#39;#, :action =&gt; &#39;user_working_on_task&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="20">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="19">
+        <li class="never" data-hits="" data-linenumber="21">
           
           
           <code class="ruby">end</code>
@@ -4708,58 +4779,16 @@
         <li class="never" data-hits="" data-linenumber="102">
           
           
-          <code class="ruby">      #user = User.find(1)</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="103">
           
           
-          <code class="ruby">      #pre = user.tasks.count</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="104">
-          
-          
-          <code class="ruby">      #t1 = Task.find(1)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="105">
-          
-          
-          <code class="ruby">      #pre_task = t1.users.count</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="106">
-          
-          
-          <code class="ruby">      #user.tasks &lt;&lt; t1</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="107">
-          
-          
-          <code class="ruby">      #expect(user.tasks.count).to be_eql(pre + 1)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="108">
-          
-          
-          <code class="ruby">      #expect(t1.users.count).to be_eql(pre_task + 1)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="109">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="110">
-          
-          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="111">
+        <li class="never" data-hits="" data-linenumber="104">
           
           
           <code class="ruby">end</code>
