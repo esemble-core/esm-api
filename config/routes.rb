@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
       resources :projects
 
-      resources :tasks
+      resources :tasks, only: [:create, :show]
 
       get :usersearch, :controller => 'users'#, :action => 'usersearch'
 
