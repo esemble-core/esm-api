@@ -60,5 +60,17 @@ RSpec.describe 'Tasks API', type: :request do
       post_count = u.tasks.count
       expect(post_count).to be_eql(pre_count + 1)
     end
+
+
+    it 'returns the task for the id and includes users' do
+        t1 = Task.find(1)
+        u1 = User.find(1)
+        t1.users << u1
+        t1.save
+        expect(t1.users.count).to be_eql(1)
+        get '/api/v1/tasks/1'
+        expect(resp_json['include'].size).to be_eql(1)
+    end
+
   end
 end

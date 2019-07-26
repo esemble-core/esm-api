@@ -14,27 +14,27 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-07-26T14:36:01-04:00">2019-07-26T14:36:01-04:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-07-26T17:52:52-04:00">2019-07-26T17:52:52-04:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">96.53%</span></span>
+    (<span class="covered_percent"><span class="green">97.46%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         4.2
+         4.32
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>34</b> files in total.
-    <b>346</b> relevant lines. 
-    <span class="green"><b>334</b> lines covered</span> and
-    <span class="red"><b>12</b> lines missed </span>
+    <b>354</b> relevant lines. 
+    <span class="green"><b>345</b> lines covered</span> and
+    <span class="red"><b>9</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -72,12 +72,12 @@
       
       <tr>
         <td class="strong"><a href="#be7350c14288e6ff9e1bff24978ad78e39fc93a6" class="src_link" title="app/controllers/api/v1/tasks_controller.rb">app/controllers/api/v1/tasks_controller.rb</a></td>
-        <td class="red strong">73.91 %</td>
+        <td class="yellow strong">86.96 %</td>
         <td>41</td>
         <td>23</td>
-        <td>17</td>
-        <td>6</td>
-        <td>0.8</td>
+        <td>20</td>
+        <td>3</td>
+        <td>0.9</td>
       </tr>
       
       <tr>
@@ -127,7 +127,7 @@
         <td>4</td>
         <td>4</td>
         <td>0</td>
-        <td>2.0</td>
+        <td>3.3</td>
       </tr>
       
       <tr>
@@ -267,7 +267,7 @@
         <td>6</td>
         <td>6</td>
         <td>0</td>
-        <td>87.7</td>
+        <td>94.3</td>
       </tr>
       
       <tr>
@@ -277,7 +277,7 @@
         <td>4</td>
         <td>4</td>
         <td>0</td>
-        <td>33.5</td>
+        <td>36.0</td>
       </tr>
       
       <tr>
@@ -287,7 +287,7 @@
         <td>6</td>
         <td>6</td>
         <td>0</td>
-        <td>49.7</td>
+        <td>50.3</td>
       </tr>
       
       <tr>
@@ -327,7 +327,7 @@
         <td>22</td>
         <td>20</td>
         <td>2</td>
-        <td>3.5</td>
+        <td>3.6</td>
       </tr>
       
       <tr>
@@ -353,9 +353,9 @@
       <tr>
         <td class="strong"><a href="#313a346962c47bc1bd666a35b9bd6275ece45375" class="src_link" title="spec/requests/task_request_spec.rb">spec/requests/task_request_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>64</td>
-        <td>46</td>
-        <td>46</td>
+        <td>76</td>
+        <td>54</td>
+        <td>54</td>
         <td>0</td>
         <td>1.4</td>
       </tr>
@@ -387,7 +387,7 @@
         <td>3</td>
         <td>3</td>
         <td>0</td>
-        <td>6.7</td>
+        <td>7.0</td>
       </tr>
       
     </tbody>
@@ -831,11 +831,11 @@
         <div class="source_table" id="be7350c14288e6ff9e1bff24978ad78e39fc93a6">
   <div class="header">
     <h3>app/controllers/api/v1/tasks_controller.rb</h3>
-    <h4><span class="red">73.91 %</span> covered</h4>
+    <h4><span class="yellow">86.96 %</span> covered</h4>
     <div>
       <b>23</b> relevant lines. 
-      <span class="green"><b>17</b> lines covered</span> and
-      <span class="red"><b>6</b> lines missed.</span>
+      <span class="green"><b>20</b> lines covered</span> and
+      <span class="red"><b>3</b> lines missed.</span>
     </div>
   </div>
   
@@ -944,20 +944,20 @@
           <code class="ruby">  def show</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="18">
-          
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
           
           <code class="ruby">    task = Task.find(params[:id])</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="19">
-          
+        <li class="covered" data-hits="1" data-linenumber="19">
+          <span class="hits">1</span>
           
           <code class="ruby">    users_working_on = task.users</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="20">
-          
+        <li class="covered" data-hits="1" data-linenumber="20">
+          <span class="hits">1</span>
           
           <code class="ruby">    render json: {status: &#39;SUCCESS&#39;, message: &#39;Task found&#39;, data: task, include: users_working_on},status: :ok</code>
         </li>
@@ -1699,8 +1699,8 @@
           <code class="ruby">class Task &lt; ApplicationRecord</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="2">
-          <span class="hits">5</span>
+        <li class="covered" data-hits="10" data-linenumber="2">
+          <span class="hits">10</span>
           
           <code class="ruby">  has_and_belongs_to_many :users, -&gt; { distinct }</code>
         </li>
@@ -3147,26 +3147,26 @@
           <code class="ruby">  factory :project do</code>
         </li>
       
-        <li class="covered" data-hits="131" data-linenumber="3">
-          <span class="hits">131</span>
+        <li class="covered" data-hits="141" data-linenumber="3">
+          <span class="hits">141</span>
           
           <code class="ruby">    name { Faker::Ancient.hero }</code>
         </li>
       
-        <li class="covered" data-hits="131" data-linenumber="4">
-          <span class="hits">131</span>
+        <li class="covered" data-hits="141" data-linenumber="4">
+          <span class="hits">141</span>
           
           <code class="ruby">    description { Faker::Quote.yoda }</code>
         </li>
       
-        <li class="covered" data-hits="131" data-linenumber="5">
-          <span class="hits">131</span>
+        <li class="covered" data-hits="141" data-linenumber="5">
+          <span class="hits">141</span>
           
           <code class="ruby">    lifecycle { Faker::Number.number(1) }</code>
         </li>
       
-        <li class="covered" data-hits="131" data-linenumber="6">
-          <span class="hits">131</span>
+        <li class="covered" data-hits="141" data-linenumber="6">
+          <span class="hits">141</span>
           
           <code class="ruby">    funding { Faker::Number.number(1) }</code>
         </li>
@@ -3220,14 +3220,14 @@
           <code class="ruby">  factory :task do</code>
         </li>
       
-        <li class="covered" data-hits="66" data-linenumber="3">
-          <span class="hits">66</span>
+        <li class="covered" data-hits="71" data-linenumber="3">
+          <span class="hits">71</span>
           
           <code class="ruby">    name { Faker::Lorem.word }</code>
         </li>
       
-        <li class="covered" data-hits="66" data-linenumber="4">
-          <span class="hits">66</span>
+        <li class="covered" data-hits="71" data-linenumber="4">
+          <span class="hits">71</span>
           
           <code class="ruby">    project_id { 1 }</code>
         </li>
@@ -3275,26 +3275,26 @@
           <code class="ruby">  factory :user do</code>
         </li>
       
-        <li class="covered" data-hits="74" data-linenumber="3">
-          <span class="hits">74</span>
+        <li class="covered" data-hits="75" data-linenumber="3">
+          <span class="hits">75</span>
           
           <code class="ruby">    name { Faker::Lorem.word }</code>
         </li>
       
-        <li class="covered" data-hits="74" data-linenumber="4">
-          <span class="hits">74</span>
+        <li class="covered" data-hits="75" data-linenumber="4">
+          <span class="hits">75</span>
           
           <code class="ruby">    eth_addr { Faker::Blockchain::Ethereum.address }</code>
         </li>
       
-        <li class="covered" data-hits="74" data-linenumber="5">
-          <span class="hits">74</span>
+        <li class="covered" data-hits="75" data-linenumber="5">
+          <span class="hits">75</span>
           
           <code class="ruby">    uuid { Faker::Alphanumeric.alpha(8) }</code>
         </li>
       
-        <li class="covered" data-hits="74" data-linenumber="6">
-          <span class="hits">74</span>
+        <li class="covered" data-hits="75" data-linenumber="6">
+          <span class="hits">75</span>
           
           <code class="ruby">    email { Faker::Internet.email }</code>
         </li>
@@ -3981,14 +3981,14 @@
           <code class="ruby">  config.around(:each) do |example|</code>
         </li>
       
-        <li class="covered" data-hits="30" data-linenumber="60">
-          <span class="hits">30</span>
+        <li class="covered" data-hits="31" data-linenumber="60">
+          <span class="hits">31</span>
           
           <code class="ruby">    DatabaseCleaner.cleaning do</code>
         </li>
       
-        <li class="covered" data-hits="30" data-linenumber="61">
-          <span class="hits">30</span>
+        <li class="covered" data-hits="31" data-linenumber="61">
+          <span class="hits">31</span>
           
           <code class="ruby">      example.run</code>
         </li>
@@ -4689,8 +4689,8 @@
     <h3>spec/requests/task_request_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>46</b> relevant lines. 
-      <span class="green"><b>46</b> lines covered</span> and
+      <b>54</b> relevant lines. 
+      <span class="green"><b>54</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -4716,20 +4716,20 @@
           <code class="ruby">RSpec.describe &#39;Tasks API&#39;, type: :request do</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="4">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="7" data-linenumber="4">
+          <span class="hits">7</span>
           
           <code class="ruby">  let!(:projects) { create_list(:project, 10) }</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="5">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="7" data-linenumber="5">
+          <span class="hits">7</span>
           
           <code class="ruby">  let!(:users) { create_list(:user, 1) }</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="6">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="7" data-linenumber="6">
+          <span class="hits">7</span>
           
           <code class="ruby">  let!(:tasks) { create_list(:task, 5) }</code>
         </li>
@@ -5073,10 +5073,82 @@
         <li class="never" data-hits="" data-linenumber="63">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="64">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="65">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;returns the task for the id and includes users&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="66">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        t1 = Task.find(1)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="67">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        u1 = User.find(1)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="68">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        t1.users &lt;&lt; u1</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="69">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        t1.save</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="70">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        expect(t1.users.count).to be_eql(1)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="71">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        get &#39;/api/v1/tasks/1&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="72">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        expect(resp_json[&#39;include&#39;].size).to be_eql(1)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="73">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="74">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="75">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="76">
           
           
           <code class="ruby">end</code>
@@ -5601,8 +5673,8 @@
           <code class="ruby">  def resp_json</code>
         </li>
       
-        <li class="covered" data-hits="18" data-linenumber="4">
-          <span class="hits">18</span>
+        <li class="covered" data-hits="19" data-linenumber="4">
+          <span class="hits">19</span>
           
           <code class="ruby">    JSON.parse(response.body)</code>
         </li>
