@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_28_140431) do
+ActiveRecord::Schema.define(version: 2019_07_28_184406) do
 
   create_table "projects", force: :cascade do |t|
     t.integer "lifecycle"
@@ -19,6 +19,17 @@ ActiveRecord::Schema.define(version: 2019_07_28_140431) do
     t.integer "funding"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "task_fundings", force: :cascade do |t|
+    t.string "token_address"
+    t.string "token_symbol"
+    t.string "token_name"
+    t.decimal "amount"
+    t.integer "task_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["task_id"], name: "index_task_fundings_on_task_id"
   end
 
   create_table "tasks", force: :cascade do |t|
