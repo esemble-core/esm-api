@@ -74,11 +74,20 @@ RSpec.describe 'Tasks API', type: :request do
         expect(resp_json['include'].size).to be_eql(1)
     end
 
-    it 'returns the tokenfundings for a token' do
-      t1 = Task.find(1)
-      funding_count = 2
-      fundings = t1.task_fundings
-      expect(funding_count).to be_eql(funding_count)
+
+    it 'returns the token payouts for the task' do 
+        post('/api/v1/task_fundings/', params: 
+          { token_address: '0x2956356cd2a2bf3202f771f50d3d14a367b48070', 
+            token_name: 'Ethereum', 
+            token_symbol: 'ETH', 
+            amount: 12.5, 
+            task_id: 1
+          }
+        )
+        
+        # verify transaction that then adds task_fundings to tasks
+
+        # when you get the json, should get user and get task_fundings with :include
     end
   end
 end

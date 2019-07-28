@@ -46,7 +46,7 @@ RSpec.describe 'Projects API', type: :request do
       post = resp_json['data']['name']
       expect(post).to be_eql('MyNewProjectName')
     end
-
-   
+    
+    
   end
 end

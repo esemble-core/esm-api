@@ -33,9 +33,23 @@ class Api::V1::TasksController < ApplicationController
     render json: {status: 'ERROR', message: 'Task or User could be not found'},status: :unprocesseble_entity
   end
 
+  def create_task_funding
+    t = Task.find(params[:task_id])
+    t.task_fundings.create(task_funding_params)
+    t.save
+
+  rescue ActiveRecord::RecordNotFound
+    render json: {status: 'ERROR', message: 'Task or User could be not found'},status: :unprocesseble_entity
+
+  end
+
 private
   def task_params
     params.permit(:name, :project_id)
+  end
+
+  def task_funding_params
+    params.permit(:token_address, :token_name, :token_symbol, :amount, :task_id)
   end
 
 end
