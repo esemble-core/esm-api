@@ -17,7 +17,8 @@ class Api::V1::TasksController < ApplicationController
   def show
     task = Task.find(params[:id])
     users_working_on = task.users
-    render json: {status: 'SUCCESS', message: 'Task found', data: task, include: users_working_on},status: :ok
+    token_fundings = task.task_fundings
+    render json: {status: 'SUCCESS', message: 'Task found', data: task, include: users_working_on, task_fundings: token_fundings},status: :ok
   rescue ActiveRecord::RecordNotFound
     render json: {status: 'ERROR', message: 'Task could not be found for that id'},status: :unprocesseble_entity
   end
@@ -37,10 +38,10 @@ class Api::V1::TasksController < ApplicationController
     t = Task.find(params[:task_id])
     t.task_fundings.create(task_funding_params)
     t.save
+    render json: {status: 'SUCCESS', message: 'Task funding saved on tasks'},status: :ok
 
   rescue ActiveRecord::RecordNotFound
     render json: {status: 'ERROR', message: 'Task or User could be not found'},status: :unprocesseble_entity
-
   end
 
 private
