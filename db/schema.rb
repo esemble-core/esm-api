@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_28_184406) do
+ActiveRecord::Schema.define(version: 2019_07_29_211253) do
 
   create_table "projects", force: :cascade do |t|
     t.integer "lifecycle"
@@ -19,6 +19,16 @@ ActiveRecord::Schema.define(version: 2019_07_28_184406) do
     t.integer "funding"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "task_event_verifications", force: :cascade do |t|
+    t.integer "verifiable_task_event_id"
+    t.integer "user_id"
+    t.string "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_task_event_verifications_on_user_id"
+    t.index ["verifiable_task_event_id"], name: "index_task_event_verifications_on_verifiable_task_event_id"
   end
 
   create_table "task_fundings", force: :cascade do |t|
@@ -53,6 +63,15 @@ ActiveRecord::Schema.define(version: 2019_07_28_184406) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "verifiable_task_events", force: :cascade do |t|
+    t.string "attachment_link_text"
+    t.integer "type"
+    t.integer "task_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["task_id"], name: "index_verifiable_task_events_on_task_id"
   end
 
 end

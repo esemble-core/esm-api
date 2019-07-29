@@ -1,0 +1,2 @@
+class TaskEventVerification < ApplicationRecord
+end
