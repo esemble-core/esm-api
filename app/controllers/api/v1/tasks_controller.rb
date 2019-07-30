@@ -19,7 +19,7 @@ class Api::V1::TasksController < ApplicationController
     users_working_on = task.users
     token_fundings = task.task_fundings
     events = task.events.includes(:task_event_verifications)
-    render json: {status: 'SUCCESS', message: 'Task found', task: task, include: users_working_on, task_fundings: token_fundings, events: events.to_json( :include => [:task_event_verifications] )},status: :ok
+    render json: {status: 'SUCCESS', message: 'Task found', task: task, users_working_on: users_working_on, task_fundings: token_fundings, events: events.to_json( :include => [:task_event_verifications] )},status: :ok
   rescue ActiveRecord::RecordNotFound
     render json: {status: 'ERROR', message: 'Task could not be found for that id'},status: :unprocesseble_entity
   end

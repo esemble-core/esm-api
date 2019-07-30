@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-07-30T18:12:18-04:00">2019-07-30T18:12:18-04:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-07-30T18:21:49-04:00">2019-07-30T18:21:49-04:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -663,7 +663,7 @@
         <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
-          <code class="ruby">      render json: {status: &#39;SUCCESS&#39;, message: &#39;Loaded projects with tasks&#39;, project: project, include: tasks},status: :ok</code>
+          <code class="ruby">      render json: {status: &#39;SUCCESS&#39;, message: &#39;Loaded projects with tasks&#39;, project: project, tasks: tasks},status: :ok</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="27">
@@ -1061,7 +1061,7 @@
         <li class="covered" data-hits="3" data-linenumber="22">
           <span class="hits">3</span>
           
-          <code class="ruby">    render json: {status: &#39;SUCCESS&#39;, message: &#39;Task found&#39;, task: task, include: users_working_on, task_fundings: token_fundings, events: events.to_json( :include =&gt; [:task_event_verifications] )},status: :ok</code>
+          <code class="ruby">    render json: {status: &#39;SUCCESS&#39;, message: &#39;Task found&#39;, task: task, users_working_on: users_working_on, task_fundings: token_fundings, events: events.to_json( :include =&gt; [:task_event_verifications] )},status: :ok</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="23">
@@ -5934,7 +5934,7 @@
         <li class="covered" data-hits="1" data-linenumber="33">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(resp_json[&#39;include&#39;].size).to be_eql(2)</code>
+          <code class="ruby">      expect(resp_json[&#39;tasks&#39;].size).to be_eql(2)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="34">
@@ -6186,7 +6186,7 @@
         <li class="covered" data-hits="1" data-linenumber="75">
           <span class="hits">1</span>
           
-          <code class="ruby">        expect(resp_json[&#39;include&#39;].size).to be_eql(1)</code>
+          <code class="ruby">        expect(resp_json[&#39;users_working_on&#39;].size).to be_eql(1)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="76">

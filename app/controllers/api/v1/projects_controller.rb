@@ -23,7 +23,7 @@
       #tasks_json = TaskSerializer.new(tasks).serialized_json
       #render json: {status: 'SUCCESS', message: 'Loaded projects with tasks', data: proj_json, include: tasks_json},status: :ok
 
-      render json: {status: 'SUCCESS', message: 'Loaded projects with tasks', project: project, include: tasks},status: :ok
+      render json: {status: 'SUCCESS', message: 'Loaded projects with tasks', project: project, tasks: tasks},status: :ok
     else
       project = Project.find(params[:id])
       render json: {status: 'SUCCESS', message: 'Loaded project', project: project},status: :ok

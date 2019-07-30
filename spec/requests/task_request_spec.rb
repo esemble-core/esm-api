@@ -30,7 +30,7 @@ RSpec.describe 'Tasks API', type: :request do
       p1.tasks.create(name: "my task 2")
       p1.save
       get('/api/v1/projects/2', params: {with_tasks: 'true'})
-      expect(resp_json['include'].size).to be_eql(2)
+      expect(resp_json['tasks'].size).to be_eql(2)
     end
 
     it 'creates tasks for a project id' do
@@ -72,7 +72,7 @@ RSpec.describe 'Tasks API', type: :request do
         t1.save
         expect(t1.users.count).to be_eql(1)
         get '/api/v1/tasks/1'
-        expect(resp_json['include'].size).to be_eql(1)
+        expect(resp_json['users_working_on'].size).to be_eql(1)
     end
 
 
