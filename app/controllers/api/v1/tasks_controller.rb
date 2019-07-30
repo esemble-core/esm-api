@@ -18,7 +18,8 @@ class Api::V1::TasksController < ApplicationController
     task = Task.find(params[:id])
     users_working_on = task.users
     token_fundings = task.task_fundings
-    render json: {status: 'SUCCESS', message: 'Task found', data: task, include: users_working_on, task_fundings: token_fundings},status: :ok
+    events = task.events.includes(:task_event_verifications)
+    render json: {status: 'SUCCESS', message: 'Task found', data: task, include: users_working_on, task_fundings: token_fundings, events: events.to_json( :include => [:task_event_verifications] )},status: :ok
   rescue ActiveRecord::RecordNotFound
     render json: {status: 'ERROR', message: 'Task could not be found for that id'},status: :unprocesseble_entity
   end
@@ -34,6 +35,7 @@ class Api::V1::TasksController < ApplicationController
     render json: {status: 'ERROR', message: 'Task or User could be not found'},status: :unprocesseble_entity
   end
 
+
   def create_task_funding
     t = Task.find(params[:task_id])
     t.task_fundings.create(task_funding_params)
@@ -44,6 +46,7 @@ class Api::V1::TasksController < ApplicationController
     render json: {status: 'ERROR', message: 'Task or User could be not found'},status: :unprocesseble_entity
   end
 
+
 private
   def task_params
     params.permit(:name, :project_id)
@@ -52,5 +55,4 @@ private
   def task_funding_params
     params.permit(:token_address, :token_name, :token_symbol, :amount, :task_id)
   end
-
 end

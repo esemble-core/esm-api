@@ -5,7 +5,8 @@ RSpec.describe 'Tasks API', type: :request do
   let!(:users) { create_list(:user, 1) }
   let!(:tasks) { create_list(:task, 5) }
   let!(:tasks_fundings) { create_list(:task_funding, 2) }
-
+  let!(:verifiable_task_events) { create_list(:verifiable_task_event, 3) }
+  let!(:task_event_verifications) { create_list(:task_event_verification, 2) }
 
 
   describe '/tasks API' do
@@ -90,7 +91,13 @@ RSpec.describe 'Tasks API', type: :request do
        
       get '/api/v1/tasks/1'
       expect(resp_json['task_fundings'].size).to be_eql(post)
-      
+    end
+
+
+    it 'get events and event verifications' do
+      get('/api/v1/tasks/1')
+      events = resp_json['events']
+      expect(events).not_to eql('')
     end
   end
 end
