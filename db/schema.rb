@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 2019_07_29_211253) do
 
   create_table "verifiable_task_events", force: :cascade do |t|
     t.string "attachment_link_text"
-    t.integer "type"
+    t.integer "event_type"
     t.integer "task_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

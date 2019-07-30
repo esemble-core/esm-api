@@ -5,9 +5,7 @@ class CreateProjects < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :description
       t.integer :funding
-      #users
-      #tasks
-      # <- claim
+      
       t.timestamps
     end
   end
