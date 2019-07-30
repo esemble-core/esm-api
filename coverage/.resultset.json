@@ -481,6 +481,13 @@
         1,
         1,
         null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
         null
       ],
       "C:/lib/3DEV/esm-api/app/models/task.rb": [
@@ -491,6 +498,10 @@
         1,
         null,
         1,
+        null,
+        1,
+        1,
+        null,
         null
       ],
       "C:/lib/3DEV/esm-api/spec/models/user_spec.rb": [
@@ -535,6 +546,10 @@
         1,
         null,
         1,
+        null,
+        1,
+        1,
+        null,
         null
       ],
       "C:/lib/3DEV/esm-api/spec/requests/projects_request_spec.rb": [
@@ -995,6 +1010,6 @@
         null
       ]
     },
-    "timestamp": 1564499230
+    "timestamp": 1564500363
   }
 }

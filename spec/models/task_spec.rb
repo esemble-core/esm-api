@@ -30,5 +30,12 @@ RSpec.describe Task, type: :model do
     expect(events.count).to be_eql(3)
     verified = t1.verifiable_task_events.first.task_event_verifications
     expect(verified.count).to be_eql(2)
+
+    e2 = t1.events
+    expect(e2.count).to be_eql(3)
+
+    v2 = e2.first.verifications
+    expect(v2.count).to be_eql(2)
   end
+
 end

@@ -5,4 +5,8 @@ class Task < ApplicationRecord
   has_many :verifiable_task_events, dependent: :destroy
 
   validates_presence_of :name
+
+  def events
+    verifiable_task_events
+  end
 end
