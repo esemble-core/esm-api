@@ -4,9 +4,9 @@ class Api::V1::TasksController < ApplicationController
     project = Project.find(params[:project_id])
     task = project.tasks.create(task_params)
     if project.save
-      render json: {status: 'SUCCESS', message: 'Saved task', data: task},status: :ok
+      render json: {status: 'SUCCESS', message: 'Saved task', task: task},status: :ok
     else
-      render json: {status: 'ERROR', message: 'Task not saved', data: task.errors},status: :unprocesseble_entity
+      render json: {status: 'ERROR', message: 'Task not saved', task: task.errors},status: :unprocesseble_entity
     end
 
   rescue ActiveRecord::RecordNotFound
@@ -19,7 +19,7 @@ class Api::V1::TasksController < ApplicationController
     users_working_on = task.users
     token_fundings = task.task_fundings
     events = task.events.includes(:task_event_verifications)
-    render json: {status: 'SUCCESS', message: 'Task found', data: task, include: users_working_on, task_fundings: token_fundings, events: events.to_json( :include => [:task_event_verifications] )},status: :ok
+    render json: {status: 'SUCCESS', message: 'Task found', task: task, include: users_working_on, task_fundings: token_fundings, events: events.to_json( :include => [:task_event_verifications] )},status: :ok
   rescue ActiveRecord::RecordNotFound
     render json: {status: 'ERROR', message: 'Task could not be found for that id'},status: :unprocesseble_entity
   end

@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-07-30T12:33:13-04:00">2019-07-30T12:33:13-04:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-07-30T18:12:18-04:00">2019-07-30T18:12:18-04:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -537,7 +537,7 @@
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">    render json: { status: &#39;SUCCESS&#39;, message: &#39;Loaded projects&#39;, data: projects },status: :ok</code>
+          <code class="ruby">    render json: { status: &#39;SUCCESS&#39;, message: &#39;Loaded projects&#39;, projects: projects },status: :ok</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
@@ -579,7 +579,7 @@
         <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
-          <code class="ruby">      render json: {status: &#39;SUCCESS&#39;, message: &#39;Saved project&#39;, data: project},status: :ok</code>
+          <code class="ruby">      render json: {status: &#39;SUCCESS&#39;, message: &#39;Saved project&#39;, project: project},status: :ok</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
@@ -591,7 +591,7 @@
         <li class="missed" data-hits="0" data-linenumber="14">
           
           
-          <code class="ruby">      render json: {status: &#39;ERROR&#39;, message: &#39;Project not saved&#39;, data: project.errors},status: :unprocesseble_entity</code>
+          <code class="ruby">      render json: {status: &#39;ERROR&#39;, message: &#39;Project not saved&#39;, errors: project.errors},status: :unprocesseble_entity</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="15">
@@ -663,7 +663,7 @@
         <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
-          <code class="ruby">      render json: {status: &#39;SUCCESS&#39;, message: &#39;Loaded projects with tasks&#39;, data: project, include: tasks},status: :ok</code>
+          <code class="ruby">      render json: {status: &#39;SUCCESS&#39;, message: &#39;Loaded projects with tasks&#39;, project: project, include: tasks},status: :ok</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="27">
@@ -681,7 +681,7 @@
         <li class="covered" data-hits="3" data-linenumber="29">
           <span class="hits">3</span>
           
-          <code class="ruby">      render json: {status: &#39;SUCCESS&#39;, message: &#39;Loaded project&#39;, data: project},status: :ok</code>
+          <code class="ruby">      render json: {status: &#39;SUCCESS&#39;, message: &#39;Loaded project&#39;, project: project},status: :ok</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="30">
@@ -771,7 +771,7 @@
         <li class="covered" data-hits="1" data-linenumber="44">
           <span class="hits">1</span>
           
-          <code class="ruby">      render json: {status: &#39;SUCCESS&#39;, message: &#39;Project updated&#39;, data: project},status: :ok</code>
+          <code class="ruby">      render json: {status: &#39;SUCCESS&#39;, message: &#39;Project updated&#39;, project: project},status: :ok</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="45">
@@ -783,7 +783,7 @@
         <li class="missed" data-hits="0" data-linenumber="46">
           
           
-          <code class="ruby">      render json: {status: &#39;ERROR&#39;, message: &#39;Project not updated&#39;, data: project.errors},status: :unprocesseble_entity</code>
+          <code class="ruby">      render json: {status: &#39;ERROR&#39;, message: &#39;Project not updated&#39;, project: project.errors},status: :unprocesseble_entity</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="47">
@@ -971,7 +971,7 @@
         <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
-          <code class="ruby">      render json: {status: &#39;SUCCESS&#39;, message: &#39;Saved task&#39;, data: task},status: :ok</code>
+          <code class="ruby">      render json: {status: &#39;SUCCESS&#39;, message: &#39;Saved task&#39;, task: task},status: :ok</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
@@ -983,7 +983,7 @@
         <li class="missed" data-hits="0" data-linenumber="9">
           
           
-          <code class="ruby">      render json: {status: &#39;ERROR&#39;, message: &#39;Task not saved&#39;, data: task.errors},status: :unprocesseble_entity</code>
+          <code class="ruby">      render json: {status: &#39;ERROR&#39;, message: &#39;Task not saved&#39;, task: task.errors},status: :unprocesseble_entity</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
@@ -1061,7 +1061,7 @@
         <li class="covered" data-hits="3" data-linenumber="22">
           <span class="hits">3</span>
           
-          <code class="ruby">    render json: {status: &#39;SUCCESS&#39;, message: &#39;Task found&#39;, data: task, include: users_working_on, task_fundings: token_fundings, events: events.to_json( :include =&gt; [:task_event_verifications] )},status: :ok</code>
+          <code class="ruby">    render json: {status: &#39;SUCCESS&#39;, message: &#39;Task found&#39;, task: task, include: users_working_on, task_fundings: token_fundings, events: events.to_json( :include =&gt; [:task_event_verifications] )},status: :ok</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="23">
@@ -1326,7 +1326,7 @@
         <li class="covered" data-hits="2" data-linenumber="5">
           <span class="hits">2</span>
           
-          <code class="ruby">        render json: {status: &#39;SUCCESS&#39;, message: &#39;Loaded users&#39;, data: users},status: :ok</code>
+          <code class="ruby">        render json: {status: &#39;SUCCESS&#39;, message: &#39;Loaded users&#39;, users: users},status: :ok</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
@@ -1362,7 +1362,7 @@
         <li class="covered" data-hits="3" data-linenumber="11">
           <span class="hits">3</span>
           
-          <code class="ruby">        render json: {status: &#39;SUCCESS&#39;, message: &#39;Loaded user&#39;, data: user},status: :ok</code>
+          <code class="ruby">        render json: {status: &#39;SUCCESS&#39;, message: &#39;Loaded user&#39;, user: user},status: :ok</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
@@ -1410,7 +1410,7 @@
         <li class="covered" data-hits="5" data-linenumber="19">
           <span class="hits">5</span>
           
-          <code class="ruby">          render json: {status: &#39;SUCCESS&#39;, message: &#39;Saved user&#39;, data: user},status: :ok</code>
+          <code class="ruby">          render json: {status: &#39;SUCCESS&#39;, message: &#39;Saved user&#39;, user: user},status: :ok</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="20">
@@ -1422,7 +1422,7 @@
         <li class="missed" data-hits="0" data-linenumber="21">
           
           
-          <code class="ruby">          render json: {status: &#39;ERROR&#39;, message: &#39;User not saved&#39;, data: user.errors},status: :unprocesseble_entity</code>
+          <code class="ruby">          render json: {status: &#39;ERROR&#39;, message: &#39;User not saved&#39;, errors: user.errors},status: :unprocesseble_entity</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="22">
@@ -1518,7 +1518,7 @@
         <li class="covered" data-hits="1" data-linenumber="37">
           <span class="hits">1</span>
           
-          <code class="ruby">          render json: {status: &#39;SUCCESS&#39;, message: &#39;User article&#39;, data: user},status: :ok</code>
+          <code class="ruby">          render json: {status: &#39;SUCCESS&#39;, message: &#39;User article&#39;, user: user},status: :ok</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="38">
@@ -1530,7 +1530,7 @@
         <li class="missed" data-hits="0" data-linenumber="39">
           
           
-          <code class="ruby">          render json: {status: &#39;ERROR&#39;, message: &#39;User not updated&#39;, data: user.errors},status: :unprocesseble_entity</code>
+          <code class="ruby">          render json: {status: &#39;ERROR&#39;, message: &#39;User not updated&#39;, errors: user.errors},status: :unprocesseble_entity</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="40">
@@ -1584,7 +1584,7 @@
         <li class="covered" data-hits="1" data-linenumber="48">
           <span class="hits">1</span>
           
-          <code class="ruby">          render json: {status: &#39;SUCCESS&#39;, message: &#39;Found user&#39;, data: user},status: :ok</code>
+          <code class="ruby">          render json: {status: &#39;SUCCESS&#39;, message: &#39;Found user&#39;, user: user},status: :ok</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="49">
@@ -5356,7 +5356,7 @@
         <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(resp_json[&#39;data&#39;].size).to be_eql(10)</code>
+          <code class="ruby">      expect(resp_json[&#39;projects&#39;].size).to be_eql(10)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="14">
@@ -5464,7 +5464,7 @@
         <li class="covered" data-hits="1" data-linenumber="31">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(resp_json[&#39;data&#39;][&#39;name&#39;]).to be_eql(p1.name)</code>
+          <code class="ruby">      expect(resp_json[&#39;project&#39;][&#39;name&#39;]).to be_eql(p1.name)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="32">
@@ -5536,7 +5536,7 @@
         <li class="covered" data-hits="1" data-linenumber="43">
           <span class="hits">1</span>
           
-          <code class="ruby">      pre = resp_json[&#39;data&#39;][&#39;name&#39;]</code>
+          <code class="ruby">      pre = resp_json[&#39;project&#39;][&#39;name&#39;]</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="44">
@@ -5554,7 +5554,7 @@
         <li class="covered" data-hits="1" data-linenumber="46">
           <span class="hits">1</span>
           
-          <code class="ruby">      post = resp_json[&#39;data&#39;][&#39;name&#39;]</code>
+          <code class="ruby">      post = resp_json[&#39;project&#39;][&#39;name&#39;]</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="47">
@@ -6469,7 +6469,7 @@
         <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(resp_json[&#39;data&#39;].size).to be_eql(10)</code>
+          <code class="ruby">      expect(resp_json[&#39;users&#39;].size).to be_eql(10)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="17">
@@ -6529,7 +6529,7 @@
         <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(resp_json[&#39;data&#39;][&#39;name&#39;]).not_to be_empty</code>
+          <code class="ruby">      expect(resp_json[&#39;user&#39;][&#39;name&#39;]).not_to be_empty</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="27">
@@ -6643,7 +6643,7 @@
         <li class="covered" data-hits="1" data-linenumber="45">
           <span class="hits">1</span>
           
-          <code class="ruby">      pre = resp_json[&#39;data&#39;][&#39;name&#39;]</code>
+          <code class="ruby">      pre = resp_json[&#39;user&#39;][&#39;name&#39;]</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="46">
@@ -6661,7 +6661,7 @@
         <li class="covered" data-hits="1" data-linenumber="48">
           <span class="hits">1</span>
           
-          <code class="ruby">      post = resp_json[&#39;data&#39;][&#39;name&#39;]</code>
+          <code class="ruby">      post = resp_json[&#39;user&#39;][&#39;name&#39;]</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="49">
@@ -6776,7 +6776,7 @@
         <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
-          <code class="ruby">    json = resp_json[&#39;data&#39;]</code>
+          <code class="ruby">    json = resp_json[&#39;user&#39;]</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="13">

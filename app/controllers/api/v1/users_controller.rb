@@ -2,13 +2,13 @@
 
       def index
         users = User.order('created_at DESC')
-        render json: {status: 'SUCCESS', message: 'Loaded users', data: users},status: :ok
+        render json: {status: 'SUCCESS', message: 'Loaded users', users: users},status: :ok
       end
       
 
       def show
         user = User.find(params[:id])
-        render json: {status: 'SUCCESS', message: 'Loaded user', data: user},status: :ok
+        render json: {status: 'SUCCESS', message: 'Loaded user', user: user},status: :ok
       end
 
 
@@ -16,9 +16,9 @@
         user = User.new(user_params)
 
         if user.save
-          render json: {status: 'SUCCESS', message: 'Saved user', data: user},status: :ok
+          render json: {status: 'SUCCESS', message: 'Saved user', user: user},status: :ok
         else
-          render json: {status: 'ERROR', message: 'User not saved', data: user.errors},status: :unprocesseble_entity
+          render json: {status: 'ERROR', message: 'User not saved', errors: user.errors},status: :unprocesseble_entity
         end
       end
 
@@ -34,9 +34,9 @@
         user = User.find(params[:id])
 
         if (user.update_attributes(user_params))
-          render json: {status: 'SUCCESS', message: 'User article', data: user},status: :ok
+          render json: {status: 'SUCCESS', message: 'User article', user: user},status: :ok
         else
-          render json: {status: 'ERROR', message: 'User not updated', data: user.errors},status: :unprocesseble_entity
+          render json: {status: 'ERROR', message: 'User not updated', errors: user.errors},status: :unprocesseble_entity
         end
       end
 
@@ -45,7 +45,7 @@
         user = User.find_by eth_addr: params[:eth_addr]
 
         if (user)
-          render json: {status: 'SUCCESS', message: 'Found user', data: user},status: :ok
+          render json: {status: 'SUCCESS', message: 'Found user', user: user},status: :ok
         else
           render json: {status: 'FAIL', message: 'User Not Found'}, status: :ok
         end

@@ -9,7 +9,7 @@ RSpec.describe 'UserSearch', type: :request do
   it 'returns the right user' do
     get('/api/v1/usersearch', params: { eth_addr: '0x1234' })
     expect(resp_json).not_to be_empty
-    json = resp_json['data']
+    json = resp_json['user']
     expect(json['name']).to be_eql('MiMi')
   end
 

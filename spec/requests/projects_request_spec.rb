@@ -10,7 +10,7 @@ RSpec.describe 'Projects API', type: :request do
     it 'returns projects' do
       get '/api/v1/projects'
       expect(resp_json).not_to be_empty 
-      expect(resp_json['data'].size).to be_eql(10)
+      expect(resp_json['projects'].size).to be_eql(10)
     end
 
     it 'create a project' do
@@ -28,7 +28,7 @@ RSpec.describe 'Projects API', type: :request do
     it 'shows a project' do
       p1 = Project.find('1')
       get '/api/v1/projects/1'
-      expect(resp_json['data']['name']).to be_eql(p1.name)
+      expect(resp_json['project']['name']).to be_eql(p1.name)
     end
 
     it 'destroys a project' do
@@ -40,10 +40,10 @@ RSpec.describe 'Projects API', type: :request do
 
     it 'updates a project' do 
       get '/api/v1/projects/2'
-      pre = resp_json['data']['name']
+      pre = resp_json['project']['name']
       put('/api/v1/projects/2', params: {name: 'MyNewProjectName'})
       get '/api/v1/projects/2'
-      post = resp_json['data']['name']
+      post = resp_json['project']['name']
       expect(post).to be_eql('MyNewProjectName')
     end
     

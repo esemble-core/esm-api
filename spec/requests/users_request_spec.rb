@@ -13,7 +13,7 @@ RSpec.describe 'Users API', type: :request do
       # Note `json` is a custom helper to parse JSON responses
       get '/api/v1/users'
       expect(resp_json).not_to be_empty 
-      expect(resp_json['data'].size).to be_eql(10)
+      expect(resp_json['users'].size).to be_eql(10)
     end
 
     it 'returns status code 200' do
@@ -23,7 +23,7 @@ RSpec.describe 'Users API', type: :request do
 
     it 'shows a user' do
       get '/api/v1/users/1'
-      expect(resp_json['data']['name']).not_to be_empty
+      expect(resp_json['user']['name']).not_to be_empty
     end
 
     it 'create a user' do
@@ -42,10 +42,10 @@ RSpec.describe 'Users API', type: :request do
 
     it 'updates a user' do 
       get '/api/v1/users/2'
-      pre = resp_json['data']['name']
+      pre = resp_json['user']['name']
       put('/api/v1/users/2', params: {name: 'MyNewName'})
       get '/api/v1/users/2'
-      post = resp_json['data']['name']
+      post = resp_json['user']['name']
       expect(post).to be_eql('MyNewName')
     end
   end
