@@ -15,6 +15,8 @@ Rails.application.routes.draw do
       post :user_working_on_task, :controller => 'tasks'
       post :task_fundings, :controller => 'tasks', :action => 'create_task_funding'
 
+      post :create_task_event, :controller => 'tasks', :action => 'create_task_event'
+      post :create_event_verification, :controller => 'tasks', :action => 'create_event_verification'
     end
   end
 end

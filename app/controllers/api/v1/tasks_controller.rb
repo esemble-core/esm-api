@@ -44,6 +44,29 @@ class Api::V1::TasksController < ApplicationController
 
   rescue ActiveRecord::RecordNotFound
     render json: {status: 'ERROR', message: 'Task or User could be not found'},status: :unprocesseble_entity
+  end 
+
+
+  def create_task_event
+    t = Task.find(params[:task_id])
+    event = t.verifiable_task_events.create(task_event_params)
+    t.save
+    render json: {status: 'SUCCESS', message: 'Task event saved on tasks', event: event},status: :ok
+
+  rescue ActiveRecord::RecordNotFound
+    render json: {status: 'ERROR', message: 'Task could be not found to add event to'},status: :unprocesseble_entity
+  end 
+
+
+  def create_event_verification
+    te = VerifiableTaskEvent.find(params[:verifiable_task_event_id])
+    u = User.find(params[:user_id])
+    ev = te.task_event_verifications.create(event_verification_params)
+    te.save
+    render json: {status: 'SUCCESS', message: 'Task event verification saved on event', event_verification: ev},status: :ok
+
+  rescue ActiveRecord::RecordNotFound
+    render json: {status: 'ERROR', message: 'User of TaskEvent could be not found to add verification to'},status: :unprocesseble_entity
   end
 
 
@@ -54,5 +77,13 @@ private
 
   def task_funding_params
     params.permit(:token_address, :token_name, :token_symbol, :amount, :task_id)
+  end
+
+  def task_event_params
+    params.permit(:attachment_link_text, :event_type, :task_id)
+  end
+
+  def event_verification_params
+    params.permit(:verifiable_task_event_id, :user_id, :comment)
   end
 end

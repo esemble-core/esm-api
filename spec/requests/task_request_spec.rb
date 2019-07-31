@@ -99,5 +99,30 @@ RSpec.describe 'Tasks API', type: :request do
       events = resp_json['events']
       expect(events).not_to eql('')
     end
+
+
+    it 'will add events' do
+      pre = VerifiableTaskEvent.all.count
+      post('/api/v1/create_task_event/',
+        params: {
+            attachment_link_test: 'http://linksomewhere.co',
+            event_type: 1,
+            task_id: 1
+          })
+      post = VerifiableTaskEvent.all.count
+      expect(post).to be_eql(pre + 1)
+    end
+
+
+    it 'will add event verifications' do
+      pre = TaskEventVerification.all.count
+      post('/api/v1/create_event_verification/',
+        params: {
+          verifiable_task_event_id: 1,
+          user_id: 1,
+          comment: 'This is a comment, i think'
+        })
+      post = TaskEventVerification.all.count
+    end
   end
 end
