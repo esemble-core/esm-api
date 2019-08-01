@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2019_07_29_211253) do
   create_table "lookups", force: :cascade do |t|
     t.string "key"
     t.string "value"
+    t.string "entity"
     t.index ["key"], name: "index_lookups_on_key"
   end
 

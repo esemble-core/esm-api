@@ -14,27 +14,27 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-08-01T13:46:08-04:00">2019-08-01T13:46:08-04:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-08-01T15:44:09-04:00">2019-08-01T15:44:09-04:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">97.56%</span></span>
+    (<span class="covered_percent"><span class="green">97.42%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         5.51
+         5.71
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>46</b> files in total.
-    <b>491</b> relevant lines. 
-    <span class="green"><b>479</b> lines covered</span> and
-    <span class="red"><b>12</b> lines missed </span>
+    <b>503</b> relevant lines. 
+    <span class="green"><b>490</b> lines covered</span> and
+    <span class="red"><b>13</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -172,12 +172,12 @@
       
       <tr>
         <td class="strong"><a href="#68200b46d6194a168b95fb7a109c23f5c1aa0c8a" class="src_link" title="app/models/verifiable_task_event.rb">app/models/verifiable_task_event.rb</a></td>
-        <td class="green strong">100.0 %</td>
-        <td>11</td>
-        <td>6</td>
-        <td>6</td>
-        <td>0</td>
-        <td>1.0</td>
+        <td class="yellow strong">87.5 %</td>
+        <td>14</td>
+        <td>8</td>
+        <td>7</td>
+        <td>1</td>
+        <td>0.9</td>
       </tr>
       
       <tr>
@@ -303,11 +303,11 @@
       <tr>
         <td class="strong"><a href="#a026ebe880c74fc27cdf7756aecd8bbc3bd8c0ec" class="src_link" title="spec/factories/lookup.rb">spec/factories/lookup.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>6</td>
-        <td>4</td>
-        <td>4</td>
+        <td>7</td>
+        <td>5</td>
+        <td>5</td>
         <td>0</td>
-        <td>3.5</td>
+        <td>7.0</td>
       </tr>
       
       <tr>
@@ -317,7 +317,7 @@
         <td>6</td>
         <td>6</td>
         <td>0</td>
-        <td>161.0</td>
+        <td>174.3</td>
       </tr>
       
       <tr>
@@ -347,7 +347,7 @@
         <td>4</td>
         <td>4</td>
         <td>0</td>
-        <td>61.0</td>
+        <td>66.0</td>
       </tr>
       
       <tr>
@@ -357,7 +357,7 @@
         <td>6</td>
         <td>6</td>
         <td>0</td>
-        <td>57.0</td>
+        <td>58.3</td>
       </tr>
       
       <tr>
@@ -367,17 +367,17 @@
         <td>5</td>
         <td>5</td>
         <td>0</td>
-        <td>26.2</td>
+        <td>29.8</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#18d7cab1ac112b9fbcfac8cf3011d45acddf0832" class="src_link" title="spec/models/lookup_spec.rb">spec/models/lookup_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>12</td>
-        <td>7</td>
-        <td>7</td>
+        <td>24</td>
+        <td>16</td>
+        <td>16</td>
         <td>0</td>
-        <td>1.1</td>
+        <td>1.6</td>
       </tr>
       
       <tr>
@@ -447,7 +447,7 @@
         <td>22</td>
         <td>20</td>
         <td>2</td>
-        <td>5.0</td>
+        <td>5.1</td>
       </tr>
       
       <tr>
@@ -2413,11 +2413,11 @@
         <div class="source_table" id="68200b46d6194a168b95fb7a109c23f5c1aa0c8a">
   <div class="header">
     <h3>app/models/verifiable_task_event.rb</h3>
-    <h4><span class="green">100.0 %</span> covered</h4>
+    <h4><span class="yellow">87.5 %</span> covered</h4>
     <div>
-      <b>6</b> relevant lines. 
-      <span class="green"><b>6</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
+      <b>8</b> relevant lines. 
+      <span class="green"><b>7</b> lines covered</span> and
+      <span class="red"><b>1</b> lines missed.</span>
     </div>
   </div>
   
@@ -2436,16 +2436,16 @@
           <code class="ruby">  belongs_to :task</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="3">
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  </code>
+          <code class="ruby">  has_many :task_event_verifications</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  has_many :task_event_verifications</code>
+          <code class="ruby">  validates_presence_of :event_type</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="5">
@@ -2454,37 +2454,55 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="6">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  validates_presence_of :event_type</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="7">
+        <li class="never" data-hits="" data-linenumber="6">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="8">
+        <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
           <code class="ruby">  def verifications</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="9">
+        <li class="covered" data-hits="1" data-linenumber="8">
           <span class="hits">1</span>
           
           <code class="ruby">    task_event_verifications</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="never" data-hits="" data-linenumber="9">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="11">
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def event_type_descr</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="12">
+          
+          
+          <code class="ruby">    Lookup.for(event_type.to_s)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
           
           
           <code class="ruby">end</code>
@@ -3814,8 +3832,8 @@
     <h3>spec/factories/lookup.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>4</b> relevant lines. 
-      <span class="green"><b>4</b> lines covered</span> and
+      <b>5</b> relevant lines. 
+      <span class="green"><b>5</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -3835,25 +3853,31 @@
           <code class="ruby">  factory :lookup do</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="3">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="11" data-linenumber="3">
+          <span class="hits">11</span>
           
           <code class="ruby">    key { Faker::Lorem.word }</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="4">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="11" data-linenumber="4">
+          <span class="hits">11</span>
           
           <code class="ruby">    value { Faker::Lorem.word }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="5">
+        <li class="covered" data-hits="11" data-linenumber="5">
+          <span class="hits">11</span>
+          
+          <code class="ruby">    entity { &#39;VerifiableTaskEvent&#39; }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="never" data-hits="" data-linenumber="7">
           
           
           <code class="ruby">end</code>
@@ -3890,26 +3914,26 @@
           <code class="ruby">  factory :project do</code>
         </li>
       
-        <li class="covered" data-hits="241" data-linenumber="3">
-          <span class="hits">241</span>
+        <li class="covered" data-hits="261" data-linenumber="3">
+          <span class="hits">261</span>
           
           <code class="ruby">    name { Faker::Ancient.hero }</code>
         </li>
       
-        <li class="covered" data-hits="241" data-linenumber="4">
-          <span class="hits">241</span>
+        <li class="covered" data-hits="261" data-linenumber="4">
+          <span class="hits">261</span>
           
           <code class="ruby">    description { Faker::Quote.yoda }</code>
         </li>
       
-        <li class="covered" data-hits="241" data-linenumber="5">
-          <span class="hits">241</span>
+        <li class="covered" data-hits="261" data-linenumber="5">
+          <span class="hits">261</span>
           
           <code class="ruby">    lifecycle { Faker::Number.number(1) }</code>
         </li>
       
-        <li class="covered" data-hits="241" data-linenumber="6">
-          <span class="hits">241</span>
+        <li class="covered" data-hits="261" data-linenumber="6">
+          <span class="hits">261</span>
           
           <code class="ruby">    funding { Faker::Number.number(1) }</code>
         </li>
@@ -4133,14 +4157,14 @@
           <code class="ruby">  factory :task do</code>
         </li>
       
-        <li class="covered" data-hits="121" data-linenumber="3">
-          <span class="hits">121</span>
+        <li class="covered" data-hits="131" data-linenumber="3">
+          <span class="hits">131</span>
           
           <code class="ruby">    name { Faker::Lorem.word }</code>
         </li>
       
-        <li class="covered" data-hits="121" data-linenumber="4">
-          <span class="hits">121</span>
+        <li class="covered" data-hits="131" data-linenumber="4">
+          <span class="hits">131</span>
           
           <code class="ruby">    project_id { 1 }</code>
         </li>
@@ -4188,26 +4212,26 @@
           <code class="ruby">  factory :user do</code>
         </li>
       
-        <li class="covered" data-hits="85" data-linenumber="3">
-          <span class="hits">85</span>
+        <li class="covered" data-hits="87" data-linenumber="3">
+          <span class="hits">87</span>
           
           <code class="ruby">    name { Faker::Lorem.word }</code>
         </li>
       
-        <li class="covered" data-hits="85" data-linenumber="4">
-          <span class="hits">85</span>
+        <li class="covered" data-hits="87" data-linenumber="4">
+          <span class="hits">87</span>
           
           <code class="ruby">    eth_addr { Faker::Blockchain::Ethereum.address }</code>
         </li>
       
-        <li class="covered" data-hits="85" data-linenumber="5">
-          <span class="hits">85</span>
+        <li class="covered" data-hits="87" data-linenumber="5">
+          <span class="hits">87</span>
           
           <code class="ruby">    uuid { Faker::Alphanumeric.alpha(8) }</code>
         </li>
       
-        <li class="covered" data-hits="85" data-linenumber="6">
-          <span class="hits">85</span>
+        <li class="covered" data-hits="87" data-linenumber="6">
+          <span class="hits">87</span>
           
           <code class="ruby">    email { Faker::Internet.email }</code>
         </li>
@@ -4255,20 +4279,20 @@
           <code class="ruby">  factory :verifiable_task_event do</code>
         </li>
       
-        <li class="covered" data-hits="43" data-linenumber="3">
-          <span class="hits">43</span>
+        <li class="covered" data-hits="49" data-linenumber="3">
+          <span class="hits">49</span>
           
           <code class="ruby">    attachment_link_text { &quot;http://dropbox.com/document/fk3093jkj&quot;}</code>
         </li>
       
-        <li class="covered" data-hits="43" data-linenumber="4">
-          <span class="hits">43</span>
+        <li class="covered" data-hits="49" data-linenumber="4">
+          <span class="hits">49</span>
           
           <code class="ruby">    event_type { 1 }</code>
         </li>
       
-        <li class="covered" data-hits="43" data-linenumber="5">
-          <span class="hits">43</span>
+        <li class="covered" data-hits="49" data-linenumber="5">
+          <span class="hits">49</span>
           
           <code class="ruby">    task_id { 1 }</code>
         </li>
@@ -4331,8 +4355,8 @@
     <h3>spec/models/lookup_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>7</b> relevant lines. 
-      <span class="green"><b>7</b> lines covered</span> and
+      <b>16</b> relevant lines. 
+      <span class="green"><b>16</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -4364,49 +4388,121 @@
           <code class="ruby">RSpec.describe Lookup, type: :model do</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="5">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="5">
+          <span class="hits">3</span>
+          
+          <code class="ruby">  let!(:projects) { create_list(:project, 10) }</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="6">
+          <span class="hits">3</span>
+          
+          <code class="ruby">  let!(:users) { create_list(:user, 1) }</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="7">
+          <span class="hits">3</span>
           
           <code class="ruby">  let!(:lookups) { create_list(:lookup, 5) }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="covered" data-hits="3" data-linenumber="8">
+          <span class="hits">3</span>
+          
+          <code class="ruby">  let!(:tasks) { create_list(:task, 5) }</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="9">
+          <span class="hits">3</span>
+          
+          <code class="ruby">  let!(:verifiable_task_events) { create_list(:verifiable_task_event, 3) }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="7">
+        <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
           <code class="ruby">  it &#39;can do a simple lookup with a key&#39; do </code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="8">
+        <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
           <code class="ruby">    Lookup.create(key: &quot;mykey&quot;, value: &quot;myvalue&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="9">
+        <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
           <code class="ruby">    value = Lookup.for(&quot;mykey&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="10">
+        <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
           <code class="ruby">    expect(value).to be_eql(&quot;myvalue&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="11">
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it &#39;can do a lookup correctly on a linked lookup&#39; do </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    event_type_lookup = &quot;1&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="19">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    event_type_value = &quot;Design Submission&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="20">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    Lookup.create(key: event_type_lookup, value: event_type_value, entity: &#39;VerifiableTaskEvent&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="22">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    v = VerifiableTaskEvent.find(1)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="24">
           
           
           <code class="ruby">end</code>
@@ -5451,14 +5547,14 @@
           <code class="ruby">  config.around(:each) do |example|</code>
         </li>
       
-        <li class="covered" data-hits="46" data-linenumber="60">
-          <span class="hits">46</span>
+        <li class="covered" data-hits="47" data-linenumber="60">
+          <span class="hits">47</span>
           
           <code class="ruby">    DatabaseCleaner.cleaning do</code>
         </li>
       
-        <li class="covered" data-hits="46" data-linenumber="61">
-          <span class="hits">46</span>
+        <li class="covered" data-hits="47" data-linenumber="61">
+          <span class="hits">47</span>
           
           <code class="ruby">      example.run</code>
         </li>
