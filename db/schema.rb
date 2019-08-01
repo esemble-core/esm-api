@@ -12,6 +12,12 @@
 
 ActiveRecord::Schema.define(version: 2019_07_29_211253) do
 
+  create_table "lookups", force: :cascade do |t|
+    t.string "key"
+    t.string "value"
+    t.index ["key"], name: "index_lookups_on_key"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.integer "lifecycle"
     t.string "name"
