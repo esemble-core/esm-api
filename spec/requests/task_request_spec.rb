@@ -25,6 +25,7 @@ RSpec.describe 'Tasks API', type: :request do
       expect{Task.find(t2_id)}.to raise_error( ActiveRecord::RecordNotFound)
     end
 
+
     it 'returns tasks for projects when asked' do
       p1 = Project.find(2)
       p1.tasks.create(name: "my task 1")
@@ -33,6 +34,7 @@ RSpec.describe 'Tasks API', type: :request do
       get('/api/v1/projects/2', params: {with_tasks: 'true'})
       expect(resp_json['tasks'].size).to be_eql(2)
     end
+
 
     it 'creates tasks for a project id' do
       pre = Project.find(1).tasks.count
@@ -52,15 +54,14 @@ RSpec.describe 'Tasks API', type: :request do
       expect(pre).to be_eql(post)
     end
 
+
     it 'has a many to many between users and tasks' do 
       user_id = 1
       task_id = 1
-
       u = User.find(user_id)
+
       pre_count = u.tasks.count
-    
       post('/api/v1/user_working_on_task', params: { user_id: user_id, task_id: task_id })
-      
       post_count = u.tasks.count
       expect(post_count).to be_eql(pre_count + 1)
     end
@@ -89,7 +90,6 @@ RSpec.describe 'Tasks API', type: :request do
         )
       post = TaskFunding.all.count
       expect(post).to be_eql(pre + 1)
-       
       get '/api/v1/tasks/1'
       expect(resp_json['task_fundings'].size).to be_eql(post)
     end
@@ -128,7 +128,8 @@ RSpec.describe 'Tasks API', type: :request do
 
 
     it 'will look up the right event type for the id' do
-
+      get('/api/v1/tasks/1')
+      puts resp_json
     end
   end
 end

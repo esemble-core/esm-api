@@ -80,7 +80,7 @@ private
   end
 
   def task_event_params
-    params.permit(:attachment_link_text, :event_type, :task_id)
+    params.permit(:attachment_link_text, :event_type_id, :task_id)
   end
 
   def event_verification_params
