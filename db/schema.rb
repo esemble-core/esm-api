@@ -12,11 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2019_07_29_211253) do
 
-  create_table "lookups", force: :cascade do |t|
-    t.string "key"
-    t.string "value"
-    t.string "entity"
-    t.index ["key"], name: "index_lookups_on_key"
+  create_table "event_types", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -74,10 +72,11 @@ ActiveRecord::Schema.define(version: 2019_07_29_211253) do
 
   create_table "verifiable_task_events", force: :cascade do |t|
     t.string "attachment_link_text"
-    t.integer "event_type"
     t.integer "task_id"
+    t.integer "event_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["event_type_id"], name: "index_verifiable_task_events_on_event_type_id"
     t.index ["task_id"], name: "index_verifiable_task_events_on_task_id"
   end
 

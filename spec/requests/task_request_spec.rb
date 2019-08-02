@@ -5,6 +5,7 @@ RSpec.describe 'Tasks API', type: :request do
   let!(:users) { create_list(:user, 1) }
   let!(:tasks) { create_list(:task, 5) }
   let!(:tasks_fundings) { create_list(:task_funding, 2) }
+  let!(:event_types) { create_list(:event_type, 2)}
   let!(:verifiable_task_events) { create_list(:verifiable_task_event, 3) }
   let!(:task_event_verifications) { create_list(:task_event_verification, 2) }
 
@@ -106,7 +107,7 @@ RSpec.describe 'Tasks API', type: :request do
       post('/api/v1/create_task_event/',
         params: {
             attachment_link_test: 'http://linksomewhere.co',
-            event_type: 1,
+            event_type_id: 1,
             task_id: 1
           })
       post = VerifiableTaskEvent.all.count
@@ -123,6 +124,11 @@ RSpec.describe 'Tasks API', type: :request do
           comment: 'This is a comment, i think'
         })
       post = TaskEventVerification.all.count
+    end
+
+
+    it 'will look up the right event type for the id' do
+
     end
   end
 end

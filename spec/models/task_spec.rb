@@ -5,6 +5,7 @@ RSpec.describe Task, type: :model do
   let!(:projects) { create_list(:project, 10) }
   let!(:users) { create_list(:user, 1) }
   let!(:tasks) { create_list(:task, 5) }
+  let!(:event_types) { create_list(:event_type, 2)}
   let!(:verifiable_task_events) { create_list(:verifiable_task_event, 3) }
   let!(:task_event_verifications) { create_list(:task_event_verification, 2) }
 
