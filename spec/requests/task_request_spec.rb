@@ -127,9 +127,9 @@ RSpec.describe 'Tasks API', type: :request do
     end
 
 
-    it 'will look up the right event type for the id' do
-      get('/api/v1/tasks/1')
-      puts resp_json
+    it 'can look up the right event type for the id' do
+      get('/api/v1/task_event_types/')
+      expect(resp_json['task_event_types'].size).to be_eql(2)
     end
   end
 end

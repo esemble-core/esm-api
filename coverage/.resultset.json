@@ -380,9 +380,6 @@
         1,
         1,
         1,
-        null,
-        1,
-        null,
         1,
         null,
         1,
@@ -393,6 +390,9 @@
         1,
         null,
         1,
+        1,
+        1,
+        null,
         1,
         null,
         null,
@@ -521,7 +521,7 @@
       ],
       "C:/lib/3DEV/esm-api/app/models/task.rb": [
         1,
-        16,
+        14,
         1,
         1,
         1,
@@ -529,7 +529,7 @@
         1,
         null,
         1,
-        5,
+        4,
         null,
         null
       ],
@@ -960,11 +960,11 @@
         null,
         null,
         1,
-        4,
-        4,
-        4,
-        4,
-        4,
+        3,
+        3,
+        3,
+        3,
+        3,
         null,
         0,
         null,
@@ -1012,6 +1012,12 @@
         null,
         null,
         0,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
         null,
         null,
         null,
@@ -1111,6 +1117,6 @@
         null
       ]
     },
-    "timestamp": 1564777059
+    "timestamp": 1564777544
   }
 }

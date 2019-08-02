@@ -70,6 +70,12 @@ class Api::V1::TasksController < ApplicationController
   end
 
 
+  def task_event_types
+    et = EventType.all
+    render json: {status: 'SUCCESS', message: 'Task event types', task_event_types: et},status: :ok
+  end
+
+
 private
   def task_params
     params.permit(:name, :project_id)
