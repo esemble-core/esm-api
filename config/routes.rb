@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       resources :users
       resources :projects
 
-      resources :tasks, only: [:create, :show]
+      resources :tasks, only: [:create, :show, :update]
 
       get :status, :controller => 'status', :action => 'index'
     
@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       post :task_fundings, :controller => 'tasks', :action => 'create_task_funding'
       post :create_task_event, :controller => 'tasks', :action => 'create_task_event'
       post :create_event_verification, :controller => 'tasks', :action => 'create_event_verification'
+      post :set_task_completed, :controller => 'tasks', :action => 'set_completed'
 
       get :task_event_types, :controller => 'tasks'
     end

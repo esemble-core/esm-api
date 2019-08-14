@@ -131,5 +131,13 @@ RSpec.describe 'Tasks API', type: :request do
       get('/api/v1/task_event_types/')
       expect(resp_json['task_event_types'].size).to be_eql(2)
     end
+
+    it 'can be marked as complete' do
+      get('/api/v1/tasks/1')
+      expect(resp_json['task']['done']).to be_eql(false)
+      post('/api/v1/set_task_completed', params: {id: 1})
+      get('/api/v1/tasks/1')
+      expect(resp_json['task']['done']).to be_eql(true)
+    end
   end
 end

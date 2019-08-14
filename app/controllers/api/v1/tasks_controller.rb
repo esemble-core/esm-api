@@ -14,6 +14,17 @@ class Api::V1::TasksController < ApplicationController
   end
 
 
+  def set_completed
+    task = Task.find(params[:id])
+    #TODO: check that there is a verified completion event?
+    task.done = true
+    task.save
+    render json: {status: 'SUCCESS', message: 'Task set as complete', task: task},status: :ok
+  rescue ActiveRecord::RecordNotFound
+    render json: {status: 'ERROR', message: 'Task could not be updated, task not found'},status: :unprocesseble_entity
+  end
+
+
   def show
     task = Task.find(params[:id])
     users_working_on = task.users
